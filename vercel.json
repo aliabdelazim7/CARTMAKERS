@@ -5,10 +5,7 @@
     "api/*.php": {"runtime": "vercel-php@0.9.0"}
   },
   "rewrites": [
-    {"source": "/api/contact", "destination": "/api/contact.php"},
-    {"source": "/en", "destination": "/"},
-    {"source": "/portfolio/:path*", "destination": "/"},
-    {"source": "/projects/:path*", "destination": "/"}
+    {"source": "/api/contact", "destination": "/api/contact.php"}
   ],
   "headers": [
     {"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}]}
