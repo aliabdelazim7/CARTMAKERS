@@ -1,1 +1,1 @@
-{"routes":[{"path":"/","title":"CartMakers — أنظمة تجارة تشتغل وتكبر"}]}
+{"routes":[{"path":"/","title":"CartMakers — أنظمة تجارة تشتغل وتكبر"},{"path":"/portfolio","title":"CartMakers — أعمالنا"},{"path":"/projects/:slug","title":"CartMakers — مشروع"}]}
