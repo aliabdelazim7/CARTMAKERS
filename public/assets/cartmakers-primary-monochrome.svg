@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-labelledby="title desc">
+  <title id="title">CartMakers</title>
+  <desc id="desc">CartMakers Ecommerce Systems and Growth logo</desc>
+  <rect width="920" height="220" rx="36" fill="#000000"/>
+  <g transform="translate(48 48)">
+    <path d="M30 18h20l14 70h112l20-50H72" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="88" cy="119" r="12" fill="#FFFFFF"/>
+    <circle cx="163" cy="119" r="12" fill="#FFFFFF"/>
+    <path d="M92 65h76l-16 35H99" fill="#FFFFFF" opacity=".22"/>
+    <path d="M142 22l38 0-18 18 18 18h-38l18-18z" fill="#FFFFFF"/>
+  </g>
+  <text x="290" y="125" fill="#FFFFFF" font-family="Manrope,Arial,sans-serif" font-size="78" font-weight="800" letter-spacing="-3">Cart<tspan fill="#FFFFFF">Makers</tspan></text>
+  <text x="294" y="168" fill="#666666" font-family="Manrope,Arial,sans-serif" font-size="20" font-weight="600" letter-spacing="3">ECOMMERCE SYSTEMS &amp; GROWTH</text>
+</svg>
