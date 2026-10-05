@@ -6,6 +6,7 @@
   },
   "rewrites": [
     {"source": "/api/contact", "destination": "/api/contact.php"},
+    {"source": "/en", "destination": "/"},
     {"source": "/portfolio/:path*", "destination": "/"},
     {"source": "/projects/:path*", "destination": "/"}
   ],
