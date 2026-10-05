@@ -54,7 +54,7 @@ const englishBody = `<main lang="en" dir="ltr"><h1>CartMakers — Ecommerce Syst
 const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها</h1><p>مجموعة من مشاريع Ecommerce وCorporate وEducation وEditorial نستخدمها كمرجع بصري لفهم طريقة بناء تجربة أوضح.</p><ul>${projects.map(([slug, title, summary]) => `<li><a href="/projects/${slug}">${esc(title)}</a> — ${esc(summary)}</li>`).join('')}</ul></main>`;
 
 const pages = [
-  ['', page({ title: 'CartMakers — أنظمة تجارة تشتغل وتكبر', description: 'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة: المتجر، الـCheckout، الدفع، التوصيل، التتبع والنمو.', path: '/', body: homeBody })],
+  ['', base],
   ['en', page({ lang: 'en', dir: 'ltr', title: 'CartMakers — Ecommerce Systems & Growth', description: 'CartMakers builds and improves ecommerce systems for growing brands: storefronts, checkout, operations, tracking, and growth.', path: '/en', body: englishBody })],
   ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })]
 ];
