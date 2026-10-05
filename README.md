@@ -18,6 +18,5 @@ The Arabic-first site includes sixteen selected public portfolio references with
 - `/projects/velora`
 - `/projects/vervac`
 - `/projects/shopping-online-store`
-- `/projects/horus-eye`
 
 The portfolio language is intentionally careful: each project is presented as a visual/information-architecture reference. Client results, implementation technologies, and outcomes are not claimed unless separately documented.
