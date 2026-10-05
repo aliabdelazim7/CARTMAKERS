@@ -26,10 +26,11 @@ Editorial Commerce Lab: confident Arabic typography, dark ink surfaces, electric
 - **Signature brand color:** Electric Lime `#C7F36B`.
 
 ## Offer system
-- Commerce Readiness Sprint — entry diagnostic and prioritized fixes.
-- Launch Lite — constrained fast store launch.
-- Commerce Launch — fixed-scope website/store build with integrations and QA.
-- Growth Loop — monthly post-launch optimization, CRO, tracking, CRM, and merchandising.
+- Starter — WordPress site for a fast, clear launch.
+- Business — branded WordPress site with SEO, leads, and tracking.
+- Commerce — WooCommerce store with checkout, COD, and tracking.
+- Store Launch — Shopify, Salla, or Zid setup with QA and handover.
+- Commerce Diagnostic — entry diagnostic that recommends one of the available packages.
 - Marketing retainers — structured add-on packages only after baseline/tracking readiness.
 
 Prices are presented as starting ranges and remain subject to scope, integrations, content readiness, and third-party fees.
