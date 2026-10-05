@@ -43,27 +43,32 @@ $text = implode("\n", [
   $escape($message),
 ]);
 
-$ch = curl_init('https://api.telegram.org/bot' . rawurlencode($botToken) . '/sendMessage');
-curl_setopt_array($ch, [
-  CURLOPT_POST => true,
-  CURLOPT_POSTFIELDS => http_build_query([
-    'chat_id' => $chatId,
-    'text' => $text,
-    'parse_mode' => 'HTML',
-    'disable_web_page_preview' => 'true',
-  ]),
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_CONNECTTIMEOUT => 5,
-  CURLOPT_TIMEOUT => 10,
+$telegramUrl = 'https://api.telegram.org/bot' . rawurlencode($botToken) . '/sendMessage';
+$requestBody = http_build_query([
+  'chat_id' => $chatId,
+  'text' => $text,
+  'parse_mode' => 'HTML',
+  'disable_web_page_preview' => 'true',
 ]);
-$response = curl_exec($ch);
-$curlError = curl_error($ch);
-$status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+$requestContext = stream_context_create(['http' => [
+  'method' => 'POST',
+  'header' => "Content-Type: application/x-www-form-urlencoded\r\nContent-Length: " . strlen($requestBody),
+  'content' => $requestBody,
+  'timeout' => 10,
+  'ignore_errors' => true,
+]]);
+$response = @file_get_contents($telegramUrl, false, $requestContext);
+$status = 0;
+foreach (($http_response_header ?? []) as $header) {
+  if (preg_match('/^HTTP\/\S+\s+(\d+)/', $header, $matches)) {
+    $status = (int)$matches[1];
+    break;
+  }
+}
 
 $telegram = is_string($response) ? json_decode($response, true) : null;
-if ($curlError !== '' || $status < 200 || $status >= 300 || !is_array($telegram) || empty($telegram['ok'])) {
-  error_log('Telegram delivery failed: ' . ($curlError !== '' ? $curlError : ('HTTP ' . $status)));
+if ($status < 200 || $status >= 300 || !is_array($telegram) || empty($telegram['ok'])) {
+  error_log('Telegram delivery failed: HTTP ' . $status);
   http_response_code(502);
   echo json_encode(['ok' => false, 'message' => 'Could not deliver the brief. Please try again.']);
   exit;
