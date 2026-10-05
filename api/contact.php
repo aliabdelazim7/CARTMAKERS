@@ -20,6 +20,7 @@ $website = trim((string)($body['website'] ?? ''));
 $package = is_array($body['package'] ?? null) ? $body['package'] : [];
 $addons = is_array($body['addons'] ?? null) ? $body['addons'] : [];
 $estimatedTotal = is_numeric($body['estimated_total'] ?? null) ? (float)$body['estimated_total'] : 0;
+$diagnostic = is_array($body['diagnostic'] ?? null) ? $body['diagnostic'] : [];
 
 if ($website !== '') {
   http_response_code(422);
@@ -54,6 +55,8 @@ $selectionLines = [];
 if ($packageLabel !== ' — ') $selectionLines[] = '<b>الباقة:</b> ' . $escape($packageLabel);
 if ($addonLabels) $selectionLines[] = '<b>الإضافات:</b> ' . implode('، ', $addonLabels);
 if ($estimatedTotal > 0) $selectionLines[] = '<b>الإجمالي المبدئي:</b> ' . number_format($estimatedTotal, 0) . ' جنيه';
+if (!empty($diagnostic['recommendation'])) $selectionLines[] = '<b>نتيجة التشخيص:</b> ' . $escape((string)$diagnostic['recommendation']);
+if (!empty($diagnostic['insight'])) $selectionLines[] = '<b>Insight:</b> ' . $escape((string)$diagnostic['insight']);
 $text = implode("\n", [
   '<b>رسالة جديدة من موقع CartMakers</b>',
   '',
