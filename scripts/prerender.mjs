@@ -49,13 +49,11 @@ function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type =
   return html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(schema)}</script>\n  </head>`);
 }
 
-const homeBody = `<main lang="ar" dir="rtl"><h1>CartMakers — أنظمة تجارة تشتغل وتكبر</h1><p>نبني ونحسن المتاجر والمواقع وأنظمة التجارة للبراندات النامية: المتجر، Checkout، الدفع، التوصيل، التتبع والنمو.</p><h2>نصلح الرحلة من أول Click لحد Repeat Purchase.</h2><p><a href="/portfolio">شاهد أعمال CartMakers</a> · <a href="/en">English version</a> · <a href="/#contact">ابدأ من هنا</a></p></main>`;
-const englishBody = `<main lang="en" dir="ltr"><h1>CartMakers — Ecommerce Systems &amp; Growth</h1><p>We build and improve ecommerce systems for growing brands: storefronts, checkout, operations, tracking, and growth.</p><h2>From click to repeat purchase.</h2><p><a href="/portfolio">See selected work</a> · <a href="/">العربية</a> · <a href="/#contact">Start a project</a></p></main>`;
+const homeBody = `<main lang="ar" dir="rtl"><h1>CartMakers — أنظمة تجارة تشتغل وتكبر</h1><p>نبني ونحسن المتاجر والمواقع وأنظمة التجارة للبراندات النامية: المتجر، Checkout، الدفع، التوصيل، التتبع والنمو.</p><h2>نصلح الرحلة من أول Click لحد Repeat Purchase.</h2><p><a href="/portfolio">شاهد أعمال CartMakers</a> · <a href="/#contact">ابدأ من هنا</a></p></main>`;
 const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها</h1><p>مجموعة من مشاريع Ecommerce وCorporate وEducation وEditorial نستخدمها كمرجع بصري لفهم طريقة بناء تجربة أوضح.</p><ul>${projects.map(([slug, title, summary]) => `<li><a href="/projects/${slug}">${esc(title)}</a> — ${esc(summary)}</li>`).join('')}</ul></main>`;
 
 const pages = [
   ['', base],
-  ['en', page({ lang: 'en', dir: 'ltr', title: 'CartMakers — Ecommerce Systems & Growth', description: 'CartMakers builds and improves ecommerce systems for growing brands: storefronts, checkout, operations, tracking, and growth.', path: '/en', body: englishBody })],
   ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })]
 ];
 for (const [slug, projectTitle, summary] of projects) {

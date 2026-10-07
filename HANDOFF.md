@@ -4,7 +4,6 @@
 >
 > **آخر تحديث:** 2026-10-06  
 > **اللغة الأساسية للمشروع:** العربية RTL  
-> **اللغة البديلة:** English عبر `/en`
 
 ---
 
@@ -28,7 +27,6 @@ CartMakers هو موقع شركة تبني وتحسن أنظمة التجارة 
 | المسار | الوظيفة |
 |---|---|
 | `/` | الصفحة الرئيسية العربية RTL |
-| `/en` | النسخة الإنجليزية الكاملة |
 | `/portfolio` | صفحة جميع الأعمال مع الفلاتر |
 | `/projects/:slug` | صفحة مشروع تفصيلية |
 | `/api/contact` | Endpoint نموذج التواصل |
@@ -96,7 +94,6 @@ npm run dev -- --host 0.0.0.0 --port 4173
 
 ```text
 http://127.0.0.1:4173/
-http://127.0.0.1:4173/en
 http://127.0.0.1:4173/portfolio
 http://127.0.0.1:4173/projects/velora
 ```
@@ -115,7 +112,6 @@ npm run build
 وتنتج المرحلة الثانية ملفات HTML داخل `dist/` للمسارات الداخلية، مثل:
 
 ```text
-dist/en/index.html
 dist/portfolio/index.html
 dist/projects/velora/index.html
 ```
@@ -208,7 +204,6 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio filters، ومنها E-commerce.
 - FAQ accordion.
 - نموذج Contact Brief.
-- اللغة الإنجليزية عبر `/en`.
 - إدارة metadata حسب الصفحة عبر `updateSeo()`.
 - IntersectionObserver للـreveal animations في الأقسام أسفل الـHero.
 
@@ -240,7 +235,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 تم تنفيذ الآتي:
 
 - Route-specific HTML وقت البناء عبر `scripts/prerender.mjs`.
-- Metadata منفصلة للـEnglish والـPortfolio وصفحات المشاريع.
+- Metadata منفصلة للـPortfolio وصفحات المشاريع.
 - Canonical URL باستخدام:
   - `https://cartmakers.vercel.app`
 - Open Graph metadata.
@@ -294,7 +289,6 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 - Home على desktop.
 - Mobile Lighthouse عند عرض 375px.
-- `/en`.
 - `/portfolio`.
 - صفحة مشروع تفصيلية.
 - تبديل الباقات والمنصات.
@@ -390,7 +384,7 @@ git push origin main
    git diff --check
    ```
 
-8. اختبر `/` و`/en` و`/portfolio` وصفحة مشروع واحدة.
+8. اختبر `/` و`/portfolio` وصفحة مشروع واحدة.
 9. اختبر Lighthouse على Mobile وDesktop إذا كان التعديل بصريًا أو متعلقًا بالأداء.
 10. ارفع كل تحديث إلى GitHub وتأكد من Vercel.
 
@@ -425,7 +419,8 @@ git push origin main
 
 ## 15. لا تفعل هذه الأشياء
 
-- لا ترجع rewrites العامة من `/en` أو `/portfolio` أو `/projects` إلى `/` بدون فهم تأثيرها على prerender والـ404.
+- لا ترجع rewrites العامة من `/portfolio` أو `/projects` إلى `/` بدون فهم تأثيرها على prerender والـ404.
+- لا تعيد إضافة تبديل لغة أو مسار `/en` بدون قرار جديد واضح من صاحب المشروع.
 - لا تحذف `scripts/prerender.mjs` من أمر build.
 - لا تغيّر اسم الباقة الحالية إلى اسم قديم.
 - لا تستخدم شهادات أو Reviews مختلقة.
