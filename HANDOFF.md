@@ -2,7 +2,7 @@
 
 > هذا الملف هو نقطة البداية لأي مطوّر أو Agent سيكمل العمل على المشروع بعد الآن.
 >
-> **آخر تحديث:** 2026-10-07
+> **آخر تحديث:** 2026-10-08
 > **اللغة الأساسية للمشروع:** العربية RTL  
 
 ---
@@ -206,7 +206,6 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio slider.
 - Portfolio filters، ومنها E-commerce.
 - FAQ accordion.
-- نموذج طلب مكالمة سريع: الاسم ورقم العميل فقط، مع ملخص الباقة المختارة قبل الإرسال؛ البريد والرسالة وباقي التفاصيل اختيارية داخليًا وتُستكمل في المكالمة. الاسم ورقم العميل مطلوبان، والرقم يصل إلى Telegram تحت تسمية «واتساب».
 - WhatsApp: لا يوجد رابط فعلي حاليًا (`wa.me` أو `api.whatsapp.com`). عبارات WhatsApp الموجودة هي Copy/CTA فقط وليست تكاملًا قابلًا للنقر. لإضافته يلزم رقم WhatsApp الرسمي ورسالة البداية ثم تحديث الأزرار والـCTA واختبار الرابط على Production.
 - إدارة metadata حسب الصفحة عبر `updateSeo()`.
 - IntersectionObserver للـreveal animations في الأقسام أسفل الـHero.
@@ -240,8 +239,8 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 - Route-specific HTML وقت البناء عبر `scripts/prerender.mjs`.
 - Metadata منفصلة للـPortfolio وصفحات المشاريع.
-- Canonical URL باستخدام:
-  - `https://cartmakers.vercel.app`
+- الدومين الرسمي الحالي هو `https://www.cart-makers.com`.
+- ملاحظة مهمة: الـcanonical الحالي ما زال يشير إلى `https://cartmakers.vercel.app` ويحتاج تحديثًا في مهمة SEO مستقلة.
 - Open Graph metadata.
 - Twitter Card metadata.
 - `og:locale` و`og:locale:alternate`.
@@ -263,19 +262,19 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 ## 10. نتائج الأداء الأخيرة
 
-آخر قياس Lighthouse موثق بعد نشر commit `93ea30a`:
+آخر قياس Lighthouse على `https://www.cart-makers.com/` بتاريخ 2026-10-08:
 
 | البيئة | Performance | Accessibility | Best Practices | SEO |
 |---|---:|---:|---:|---:|
-| Mobile 375px | **95** | **100** | **100** | **100** |
-| Desktop | **99** | **100** | **100** | **100** |
+| Mobile 375px | **91** | **100** | **100** | **100** |
+| Desktop | **88** | **100** | **100** | **100** |
 
 قياسات الموبايل:
 
-- FCP: 2.2s
-- LCP: 2.2s
-- Speed Index: 2.7s
-- TBT: 100ms
+- FCP: 2.3s
+- LCP: 2.3s
+- Speed Index: 5.7s
+- TBT: 70ms
 - CLS: 0.022
 
 تم اكتشاف وإصلاح مشكلتين مهمتين:
@@ -303,9 +302,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - الروابط الداخلية.
 - الصور الأساسية.
 - صفحة Policies مستقلة بالعربية توضح الديبوزيت 50%، النطاق، التعديلات، التسليم، الإلغاء، الملكية، السرية، ومسؤوليات الطرفين.
-- نموذج طلب المكالمة بحقلَي الاسم ورقم العميل فقط والـserver-side validation.
-- إرسال payload بالاسم والرقم فقط إلى `/api/contact` مع ملخص الباقة.
-- مراجعة WhatsApp: لا تعتبر كلمة «واتساب» في رسالة Telegram دليلًا على وجود ربط WhatsApp؛ هي تسمية للرقم الذي أدخله العميل.
+- مراجعة قنوات التواصل: لا يوجد رابط WhatsApp فعلي حاليًا (`wa.me` أو `api.whatsapp.com`)؛ أي ظهور لكلمة WhatsApp داخل المحتوى هو وصف تسويقي أو تسمية لقناة التواصل.
 - إخفاء قسم Add-ons من الواجهة مع إبقاء البيانات والكود قابلين للإرجاع.
 - الـhorizontal overflow.
 - أزرار بدون labels.
@@ -340,15 +337,16 @@ main
 ```
 
 الموقع:
-
 ```text
-https://cartmakers.vercel.app/
+https://www.cart-makers.com/
 ```
 
-آخر commit منشور:
+`https://cart-makers.com` يحوّل إلى `https://www.cart-makers.com` بحالة 308.
+رابط `https://cartmakers.vercel.app` القديم يعيد 404 حاليًا.
 
+آخر commit منشور:
 ```text
-bf23012 — Add Arabic policies and payment terms page
+331674d — Document policies and WhatsApp integration status
 ```
 
 التحديثات المرتبطة الأخيرة:
@@ -359,7 +357,7 @@ bf23012 — Add Arabic policies and payment terms page
 آخر تحديثات مرتبطة أقدم:
 - `f30517d` — Require customer phone in brief form.
 
-حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_987ALjZ8VByQ82jcXL9jHiBGpQKy`):
+حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_Hp9b5RcRMwUN51CThxBWmnYu7YXV`):
 
 ```text
 READY / production
