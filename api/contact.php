@@ -15,6 +15,10 @@ $body = json_decode(file_get_contents('php://input'), true) ?: $_POST;
 $name = trim((string)($body['name'] ?? ''));
 $email = trim((string)($body['email'] ?? ''));
 $company = trim((string)($body['company'] ?? ''));
+$phone = trim((string)($body['phone'] ?? ''));
+$projectType = trim((string)($body['project_type'] ?? ''));
+$budget = trim((string)($body['budget'] ?? ''));
+$timeline = trim((string)($body['timeline'] ?? ''));
 $message = trim((string)($body['message'] ?? ''));
 $website = trim((string)($body['website'] ?? ''));
 $package = is_array($body['package'] ?? null) ? $body['package'] : [];
@@ -27,7 +31,7 @@ if ($website !== '') {
   echo json_encode(['ok' => false, 'message' => 'Invalid submission.']);
   exit;
 }
-if (mb_strlen($name) > 100 || mb_strlen($email) > 160 || mb_strlen($company) > 160 || mb_strlen($message) > 3000 || $name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($message) < 10) {
+if (mb_strlen($name) > 100 || mb_strlen($email) > 160 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($projectType) > 100 || mb_strlen($budget) > 100 || mb_strlen($timeline) > 100 || mb_strlen($message) > 3000 || $name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($message) < 10) {
   http_response_code(422);
   echo json_encode(['ok' => false, 'message' => 'Please provide a name, valid email, and project brief.']);
   exit;
@@ -63,6 +67,10 @@ $text = implode("\n", [
   '<b>الاسم:</b> ' . $escape($name),
   '<b>البريد:</b> ' . $escape($email),
   '<b>الشركة:</b> ' . $escape($company !== '' ? $company : 'غير مذكور'),
+  '<b>واتساب:</b> ' . $escape($phone !== '' ? $phone : 'غير مذكور'),
+  '<b>نوع الطلب:</b> ' . $escape($projectType !== '' ? $projectType : 'غير محدد'),
+  '<b>الميزانية:</b> ' . $escape($budget !== '' ? $budget : 'غير محددة'),
+  '<b>التوقيت:</b> ' . $escape($timeline !== '' ? $timeline : 'غير محدد'),
   ...$selectionLines,
   '<b>الرسالة:</b>',
   $escape($message),

@@ -203,7 +203,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio slider.
 - Portfolio filters، ومنها E-commerce.
 - FAQ accordion.
-- نموذج Contact Brief.
+- نموذج Contact Brief مطوّر للموبايل: بيانات التواصل، واتساب اختياري، نوع الطلب، الميزانية والتوقيت، عدّاد الرسالة، وملخص الباقة قبل الإرسال.
 - إدارة metadata حسب الصفحة عبر `updateSeo()`.
 - IntersectionObserver للـreveal animations في الأقسام أسفل الـHero.
 
@@ -298,7 +298,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio E-commerce filter.
 - الروابط الداخلية.
 - الصور الأساسية.
-- نموذج التواصل.
+- نموذج التواصل الجديد وحقوله الاختيارية والـvalidation.
 - الـhorizontal overflow.
 - أزرار بدون labels.
 - ظهور الـHero.
