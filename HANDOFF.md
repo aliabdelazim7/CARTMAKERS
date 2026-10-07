@@ -28,6 +28,7 @@ CartMakers هو موقع شركة تبني وتحسن أنظمة التجارة 
 |---|---|
 | `/` | الصفحة الرئيسية العربية RTL |
 | `/portfolio` | صفحة جميع الأعمال مع الفلاتر |
+| `/policies` | صفحة السياسات والاتفاق التجاري |
 | `/projects/:slug` | صفحة مشروع تفصيلية |
 | `/api/contact` | Endpoint نموذج التواصل |
 | `/sitemap.xml` | Sitemap للمسارات العامة |
@@ -300,6 +301,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio E-commerce filter.
 - الروابط الداخلية.
 - الصور الأساسية.
+- صفحة Policies مستقلة بالعربية توضح الديبوزيت 50%، النطاق، التعديلات، التسليم، الإلغاء، الملكية، السرية، ومسؤوليات الطرفين.
 - نموذج طلب المكالمة بحقلَي الاسم ورقم العميل فقط والـserver-side validation.
 - إرسال payload بالاسم والرقم فقط إلى `/api/contact` مع ملخص الباقة.
 - إخفاء قسم Add-ons من الواجهة مع إبقاء البيانات والكود قابلين للإرجاع.
@@ -344,14 +346,18 @@ https://cartmakers.vercel.app/
 آخر commit منشور:
 
 ```text
-d9af675 — Temporarily hide marketing add-ons
+bf23012 — Add Arabic policies and payment terms page
 ```
 
-آخر تحديثات مرتبطة قبله:
+التحديثات المرتبطة الأخيرة:
+- `e0a4035` — Update project handoff for callback flow.
+- `d9af675` — Temporarily hide marketing add-ons.
 - `da26518` — Simplify form to request callback.
+
+آخر تحديثات مرتبطة أقدم:
 - `f30517d` — Require customer phone in brief form.
 
-حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_67D14YZLunEarsp7o9i76CmN2sMD`):
+حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_987ALjZ8VByQ82jcXL9jHiBGpQKy`):
 
 ```text
 READY / production
