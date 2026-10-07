@@ -203,7 +203,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio slider.
 - Portfolio filters، ومنها E-commerce.
 - FAQ accordion.
-- نموذج Contact Brief مبسط للموبايل: الاسم، الإيميل، نوع المساعدة، رسالة قصيرة، وملخص الباقة قبل الإرسال.
+- نموذج Contact Brief مبسط للموبايل: الاسم، رقم العميل، الإيميل، نوع المساعدة، رسالة قصيرة، وملخص الباقة قبل الإرسال. رقم العميل حقل أساسي ومطلوب ويصل إلى Telegram.
 - إدارة metadata حسب الصفحة عبر `updateSeo()`.
 - IntersectionObserver للـreveal animations في الأقسام أسفل الـHero.
 

@@ -31,9 +31,9 @@ if ($website !== '') {
   echo json_encode(['ok' => false, 'message' => 'Invalid submission.']);
   exit;
 }
-if (mb_strlen($name) > 100 || mb_strlen($email) > 160 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($projectType) > 100 || mb_strlen($budget) > 100 || mb_strlen($timeline) > 100 || mb_strlen($message) > 3000 || $name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($message) < 10) {
+if (mb_strlen($name) > 100 || mb_strlen($email) > 160 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($projectType) > 100 || mb_strlen($budget) > 100 || mb_strlen($timeline) > 100 || mb_strlen($message) > 3000 || $name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^[0-9٠-٩+\s().-]{7,40}$/u', $phone) || mb_strlen($message) < 10) {
   http_response_code(422);
-  echo json_encode(['ok' => false, 'message' => 'Please provide a name, valid email, and project brief.']);
+  echo json_encode(['ok' => false, 'message' => 'Please provide a name, valid phone number, email, and project brief.']);
   exit;
 }
 
@@ -111,5 +111,5 @@ http_response_code(200);
 echo json_encode([
   'ok' => true,
   'message' => 'Thanks — your brief was sent to the CartMakers team.',
-  'received' => ['name' => $name, 'email' => $email, 'company' => $company],
+  'received' => ['name' => $name, 'email' => $email, 'phone' => $phone, 'company' => $company],
 ]);
