@@ -44,16 +44,13 @@ img,svg,video{max-width:100%}
 }
 
 /* Brief form refinement */
-.contact-promise{display:grid;gap:10px;margin-top:28px;color:var(--slate);font:500 12px 'DM Mono'}
-.contact-promise span{display:flex;align-items:center;gap:10px}
-.contact-promise b{display:grid;place-items:center;width:24px;height:24px;background:var(--lime);color:var(--ink);font-size:10px}
 .contact-form{gap:18px}
 .form-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding-bottom:18px}
 .form-header h3{font-size:25px;margin:8px 0 0}
 .form-step,.form-time{font:500 10px 'DM Mono';letter-spacing:1px;color:var(--lime-dark)}
 .form-time{background:var(--cloud);padding:8px 10px;white-space:nowrap}
 .form-help{font-size:13px;line-height:1.8;color:var(--slate);margin:0}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.simple-form-grid{gap:13px}
 .form-grid label{position:relative}
 .form-grid .form-wide{grid-column:1 / -1}
 .required-mark,.optional-mark{font-size:10px;font-weight:400;color:var(--lime-dark);margin-right:5px}
@@ -72,7 +69,6 @@ img,svg,video{max-width:100%}
 .success-kicker{color:var(--lime-dark);font:500 10px 'DM Mono';letter-spacing:1px;margin-top:16px}
 .success .button.secondary{margin-top:18px;background:transparent;color:var(--ink);border:1px solid var(--ink)}
 @media(max-width:520px){
-  .contact-promise{gap:8px}
   .form-header h3{font-size:22px}
   .form-grid{grid-template-columns:1fr;gap:13px}
   .form-grid .form-wide{grid-column:auto}
