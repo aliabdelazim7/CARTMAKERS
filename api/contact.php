@@ -31,9 +31,9 @@ if ($website !== '') {
   echo json_encode(['ok' => false, 'message' => 'Invalid submission.']);
   exit;
 }
-if (mb_strlen($name) > 100 || mb_strlen($email) > 160 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($projectType) > 100 || mb_strlen($budget) > 100 || mb_strlen($timeline) > 100 || mb_strlen($message) > 3000 || $name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/^[0-9٠-٩+\s().-]{7,40}$/u', $phone) || mb_strlen($message) < 10) {
+if (mb_strlen($name) > 100 || mb_strlen($email) > 160 || mb_strlen($company) > 160 || mb_strlen($phone) > 40 || mb_strlen($projectType) > 100 || mb_strlen($budget) > 100 || mb_strlen($timeline) > 100 || mb_strlen($message) > 3000 || $name === '' || !preg_match('/^[0-9٠-٩+\s().-]{7,40}$/u', $phone)) {
   http_response_code(422);
-  echo json_encode(['ok' => false, 'message' => 'Please provide a name, valid phone number, email, and project brief.']);
+  echo json_encode(['ok' => false, 'message' => 'Please provide your name and a valid phone number.']);
   exit;
 }
 
@@ -65,15 +65,14 @@ $text = implode("\n", [
   '<b>رسالة جديدة من موقع CartMakers</b>',
   '',
   '<b>الاسم:</b> ' . $escape($name),
-  '<b>البريد:</b> ' . $escape($email),
+  '<b>البريد:</b> ' . $escape($email !== '' ? $email : 'سيتم أخذه في المكالمة'),
   '<b>الشركة:</b> ' . $escape($company !== '' ? $company : 'غير مذكور'),
   '<b>واتساب:</b> ' . $escape($phone !== '' ? $phone : 'غير مذكور'),
   '<b>نوع الطلب:</b> ' . $escape($projectType !== '' ? $projectType : 'غير محدد'),
   '<b>الميزانية:</b> ' . $escape($budget !== '' ? $budget : 'غير محددة'),
   '<b>التوقيت:</b> ' . $escape($timeline !== '' ? $timeline : 'غير محدد'),
   ...$selectionLines,
-  '<b>الرسالة:</b>',
-  $escape($message),
+  '<b>التفاصيل:</b> سيتم استكمالها في المكالمة',
 ]);
 
 $telegramUrl = 'https://api.telegram.org/bot' . rawurlencode($botToken) . '/sendMessage';
