@@ -2,7 +2,7 @@
 
 > هذا الملف هو نقطة البداية لأي مطوّر أو Agent سيكمل العمل على المشروع بعد الآن.
 >
-> **آخر تحديث:** 2026-10-06  
+> **آخر تحديث:** 2026-10-07
 > **اللغة الأساسية للمشروع:** العربية RTL  
 
 ---
@@ -181,6 +181,8 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 ### Add-ons
 
+الإضافات محفوظة في الكود لكنها **مخفية مؤقتًا من واجهة العميل** لتقليل التشتت أثناء طلب المكالمة. التحكم في ظهورها موجود في `src/main.jsx` عبر: `SHOW_MARKETING_ADDONS = false`.
+
 - Media Buying — حسب الميزانية والنطاق.
 - Social & Content — حسب القنوات والمخرجات.
 - Creative & Design — حسب عدد الـAssets.
@@ -198,12 +200,12 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 - تبديل نوع الموقع: WordPress أو Shopify / سلة / زد.
 - اختيار الباقة وتحديث الملخص والسعر.
-- اختيار Add-ons.
+- بيانات Add-ons موجودة، لكن قسمها مخفي مؤقتًا عبر `SHOW_MARKETING_ADDONS = false` لتبسيط مسار العميل.
 - Commerce Diagnostic وتوصية Starter/Business/Commerce.
 - Portfolio slider.
 - Portfolio filters، ومنها E-commerce.
 - FAQ accordion.
-- نموذج Contact Brief سريع للموبايل: الاسم ورقم العميل فقط، مع ملخص الباقة قبل الإرسال؛ باقي التفاصيل تُستكمل في المكالمة. رقم العميل حقل أساسي ومطلوب ويصل إلى Telegram.
+- نموذج طلب مكالمة سريع: الاسم ورقم العميل فقط، مع ملخص الباقة المختارة قبل الإرسال؛ البريد والرسالة وباقي التفاصيل اختيارية داخليًا وتُستكمل في المكالمة. الاسم ورقم العميل مطلوبان، والرقم يصل إلى Telegram.
 - إدارة metadata حسب الصفحة عبر `updateSeo()`.
 - IntersectionObserver للـreveal animations في الأقسام أسفل الـHero.
 
@@ -259,7 +261,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 ## 10. نتائج الأداء الأخيرة
 
-آخر قياس Lighthouse بعد نشر commit `93ea30a`:
+آخر قياس Lighthouse موثق بعد نشر commit `93ea30a`:
 
 | البيئة | Performance | Accessibility | Best Practices | SEO |
 |---|---:|---:|---:|---:|
@@ -298,7 +300,9 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Portfolio E-commerce filter.
 - الروابط الداخلية.
 - الصور الأساسية.
-- نموذج التواصل الجديد وحقوله الاختيارية والـvalidation.
+- نموذج طلب المكالمة بحقلَي الاسم ورقم العميل فقط والـserver-side validation.
+- إرسال payload بالاسم والرقم فقط إلى `/api/contact` مع ملخص الباقة.
+- إخفاء قسم Add-ons من الواجهة مع إبقاء البيانات والكود قابلين للإرجاع.
 - الـhorizontal overflow.
 - أزرار بدون labels.
 - ظهور الـHero.
@@ -340,10 +344,14 @@ https://cartmakers.vercel.app/
 آخر commit منشور:
 
 ```text
-93ea30a — Render hero immediately for better mobile LCP
+d9af675 — Temporarily hide marketing add-ons
 ```
 
-حالة آخر Vercel deployment وقت كتابة هذا الملف:
+آخر تحديثات مرتبطة قبله:
+- `da26518` — Simplify form to request callback.
+- `f30517d` — Require customer phone in brief form.
+
+حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_67D14YZLunEarsp7o9i76CmN2sMD`):
 
 ```text
 READY / production
