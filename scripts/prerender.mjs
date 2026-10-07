@@ -52,9 +52,12 @@ function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type =
 const homeBody = `<main lang="ar" dir="rtl"><h1>CartMakers — أنظمة تجارة تشتغل وتكبر</h1><p>نبني ونحسن المتاجر والمواقع وأنظمة التجارة للبراندات النامية: المتجر، Checkout، الدفع، التوصيل، التتبع والنمو.</p><h2>نصلح الرحلة من أول Click لحد Repeat Purchase.</h2><p><a href="/portfolio">شاهد أعمال CartMakers</a> · <a href="/#contact">ابدأ من هنا</a></p></main>`;
 const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها</h1><p>مجموعة من مشاريع Ecommerce وCorporate وEducation وEditorial نستخدمها كمرجع بصري لفهم طريقة بناء تجربة أوضح.</p><ul>${projects.map(([slug, title, summary]) => `<li><a href="/projects/${slug}">${esc(title)}</a> — ${esc(summary)}</li>`).join('')}</ul></main>`;
 
+const policyBody = `<main lang="ar" dir="rtl"><h1>سياسات التعامل مع CartMakers</h1><p>توضح هذه الصفحة الدفعة المقدمة، نطاق العمل، التعديلات، التسليم، الملكية، ومسؤوليات العميل وCartMakers.</p><h2>الدفعة المقدمة</h2><p>يتم سداد 50% عند البداية لتأكيد الحجز وبدء التنفيذ، و50% قبل الإطلاق أو التسليم النهائي.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/">ارجع إلى الموقع</a></p></main>`;
+
 const pages = [
   ['', base],
-  ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })]
+  ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })],
+  ['policies', page({ title: 'سياسات التعامل — CartMakers', description: 'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.', path: '/policies', body: policyBody })]
 ];
 for (const [slug, projectTitle, summary] of projects) {
   pages.push([`projects/${slug}`, page({ title: `${projectTitle} — CartMakers`, description: summary, path: `/projects/${slug}`, body: `<main lang="ar" dir="rtl"><h1>${esc(projectTitle)}</h1><p>${esc(summary)}</p><p><a href="/portfolio">ارجع إلى كل الأعمال</a> · <a href="/#contact">ابدأ مشروعك</a></p></main>`, type: 'article' })]);

@@ -1,1 +1,1 @@
-{"routes":[{"path":"/","title":"CartMakers — أنظمة تجارة تشتغل وتكبر"},{"path":"/portfolio","title":"CartMakers — أعمالنا"},{"path":"/projects/:slug","title":"CartMakers — مشروع"}]}
+{"routes":[{"path":"/","title":"CartMakers — أنظمة تجارة تشتغل وتكبر"},{"path":"/portfolio","title":"CartMakers — أعمالنا"},{"path":"/policies","title":"CartMakers — السياسات والاتفاق"},{"path":"/projects/:slug","title":"CartMakers — مشروع"}]}
