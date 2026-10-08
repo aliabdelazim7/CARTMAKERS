@@ -511,3 +511,27 @@ git diff --check
 النتيجة: build ناجح، وSEO check ناجح لكل 18 route. لم يتم بعد نشر هذه التغييرات أو طلب إعادة فحصها في Search Console.
 
 الخطوات التالية: نشر التعديلات، اختبار `/portfolio/` و`/projects/velora/` بعد hydration على Production، ثم بدء صفحات الخدمات/المحتوى فقط بعد حسم أسماء الباقات ونطاق الخدمات والبيانات التشغيلية المؤكدة.
+
+
+## 17. Post-deploy verification — 2026-10-08
+
+تم تحديث الحالة بعد نشر إصلاحات SEO الأخيرة:
+
+- آخر commit منشور على `main`: `0f6bb34 — Avoid root redirect loop in canonical paths`.
+- `npm run build` ناجح.
+- `npm run test:seo` ناجح لكل 18 route.
+- Production يعيد `200` للصفحة الرئيسية و`/portfolio`، و`308` من `/portfolio/` إلى `/portfolio` ومن صفحات المشاريع ذات trailing slash إلى النسخة القياسية.
+- `sitemap.xml` في Google Search Console حالته `Success`، وتم اكتشاف 18 صفحة.
+- الصفحة الرئيسية: `URL is on Google`، وتم إرسال طلب فهرسة جديد بنجاح.
+- `/portfolio`: `Discovered - currently not indexed`، وتم إرسال طلب فهرسة جديد بنجاح. قرار الإدراج النهائي وتوقيته بيد Google.
+
+### الخطة البرمجية المقترحة بعد استقرار الفهرسة
+
+1. **P1 — اختبار parity بين raw HTML وDOM بعد hydration:** إضافة smoke tests بمتصفح آلي لمسارات `/` و`/portfolio` و`/projects/velora` ونسخ trailing slash، للتحقق من title وdescription وH1 وcanonical وJSON-LD بعد تشغيل JavaScript.
+2. **P1 — مصدر بيانات واحد للـroutes:** نقل metadata ومحتوى HTML الأولي وبيانات React إلى route data module مشترك بدل تكرارها في `src/main.jsx` و`scripts/prerender.mjs`.
+3. **P1 — تقوية HTML الأولي:** جعل صفحات Portfolio والمشاريع تعرض العناوين الفرعية والصور و`alt` والـbrief والروابط السياقية الموجودة فعلًا في React قبل hydration، بدون اختلاق نتائج أو ملكية أعمال.
+4. **P2 — صفحات الخدمات:** إنشاء صفحات مستقلة فقط بعد تأكيد أسماء الباقات ونطاق الخدمات الفعلي، ثم ربطها من الرئيسية والـPortfolio وإضافتها إلى Sitemap.
+5. **P2 — الأداء:** مراجعة تحميل Google Fonts، وتطبيق caching مناسب للأصول المبصومة، ثم إعادة قياس Lighthouse وقياس ميداني عند توفر بيانات CrUX/Search Console.
+6. **P3 — صيانة المحتوى:** إضافة Case Studies وReviews حقيقية بموافقة أصحابها، وتحسين الصور عبر responsive `srcset` عند زيادة حجم المحتوى.
+
+لا يُنصح حاليًا بإنشاء `/en` أو صفحات منصات كثيرة أو FAQ schema قبل وجود قرار محتوى وتشغيلي واضح لكل صفحة.
