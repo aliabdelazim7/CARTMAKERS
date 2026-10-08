@@ -612,3 +612,10 @@ npm run test:browser
 - ملفات الصور الحالية تستجيب من Production بحالة `200`.
 
 ملاحظة: Google لا يعرض صورة Open Graph في كل نتيجة بحث عادية؛ ظهور الصورة يعتمد على نوع النتيجة وقرار Google. أما favicon فقد يحتاج إعادة الزحف ووقتًا حتى يتغير في SERP بسبب cache Google، لكن الرابط الثابت في الجذر أصبح متاحًا الآن.
+
+
+## 20. Initial HTML flash fix — 2026-10-08
+
+تم إصلاح مشكلة ظهور الصفحة كنص HTML خام خلال أول ثواني التحميل. السبب كان أن prerender يضع محتوى مبسطًا بلا classes داخل `#root`، ثم يستبدله React بعد تحميل JavaScript. تم الآن إنشاء branded initial shell داخل الـprerender يحتوي على الـlogo والـnavigation والـHero وCommerce Control Room، مع Critical CSS inline داخل `<head>`.
+
+تم التحقق باستخدام Chromium مع تعطيل JavaScript بالكامل؛ ظهرت الصفحة منسقة بالهوية البصرية والـHero قبل تشغيل React. كما ظل `npm run test:seo` ناجحًا لكل 19 route و`npm run test:browser` ناجحًا بعد hydration.
