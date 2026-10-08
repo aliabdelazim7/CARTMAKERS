@@ -134,24 +134,33 @@ function setMeta(name, content, property=false){
   if(!node){node=document.createElement('meta');node.setAttribute(property?'property':'name',name);document.head.appendChild(node)}
   node.setAttribute('content',content);
 }
+function normalizePathname(pathname=window.location.pathname){
+  if(pathname==='/' || pathname==='') return '/';
+  return pathname.replace(/\/+$/, '');
+}
 function updateSeo(projectSlug){
+  const pathname=normalizePathname();
   const project=projects.find(p=>p.slug===projectSlug);
-  const isPortfolio=window.location.pathname==='/portfolio';const isPolicies=window.location.pathname==='/policies';
-  const title=project?`${project.title} — CartMakers`:isPortfolio?'أعمال CartMakers — مواقع ومتاجر':isPolicies?'سياسات التعامل — CartMakers':'CartMakers | أنظمة التجارة والنمو';
-  const description=project?`${project.summary} مرجع بصري ومعلوماتي من CartMakers.` :isPolicies?'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.':'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة للبراندات اللي عندها طلب.';
+  const isPortfolio=pathname==='/portfolio';const isPolicies=pathname==='/policies';
+  const title=project?`${project.title} | مرجع متجر وموقع — CartMakers`:isPortfolio?'نماذج CartMakers | أعمال المواقع والمتاجر الإلكترونية':isPolicies?'سياسات CartMakers | الدفع ونطاق العمل':'CartMakers | تصميم وتطوير المواقع والمتاجر الإلكترونية';
+  const description=project?`${project.summary} مرجع بصري ومعلوماتي من CartMakers.`:isPolicies?'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.':isPortfolio?'استكشف نماذج CartMakers في المتاجر الإلكترونية والمواقع المؤسسية والتعليمية والتحريرية.':'CartMakers بتبني وتطوّر المواقع والمتاجر الإلكترونية وأنظمة التجارة من الـCheckout حتى التتبع والنمو.';
+  const pageUrl=`${SITE_URL}${pathname}`;
+  const image=project?`${SITE_URL}${project.image}`:SOCIAL_IMAGE;
   document.title=title;
   setMeta('description',description);
-  setMeta('og:type',project?'article':'website',true);setMeta('og:site_name','CartMakers',true);setMeta('og:title',title,true);setMeta('og:description',description,true);setMeta('og:url',`${SITE_URL}${window.location.pathname}`,true);setMeta('og:image',SOCIAL_IMAGE,true);
-  setMeta('twitter:card','summary_large_image');setMeta('twitter:title',title);setMeta('twitter:description',description);setMeta('twitter:image',SOCIAL_IMAGE);
-  let canonical=document.head.querySelector('link[rel=canonical]');if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}canonical.href=`${SITE_URL}${window.location.pathname}`;
+  setMeta('og:type',project?'article':'website',true);setMeta('og:site_name','CartMakers',true);setMeta('og:title',title,true);setMeta('og:description',description,true);setMeta('og:url',pageUrl,true);setMeta('og:image',image,true);setMeta('og:image:alt',project?project.title:'CartMakers — Ecommerce Systems & Growth',true);
+  setMeta('twitter:card','summary_large_image');setMeta('twitter:title',title);setMeta('twitter:description',description);setMeta('twitter:image',image);
+  let canonical=document.head.querySelector('link[rel=canonical]');if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}canonical.href=pageUrl;
   let schema=document.getElementById('cartmakers-schema');if(schema)schema.remove();
-  const data=project?{'@context':'https://schema.org','@type':'CreativeWork','name':project.title,'description':project.summary,'url':`${SITE_URL}/projects/${project.slug}`,'image':`${SITE_URL}${project.image}`}: {'@context':'https://schema.org','@type':'Organization','name':'CartMakers','description':description,'url':SITE_URL,'logo':`${SITE_URL}/assets/cartmakers-new-logo.webp`,'email':'hello@cartmakers.com'};
+  const organization={'@type':'Organization','@id':`${SITE_URL}/#organization`,'name':'CartMakers','description':'شركة متخصصة في بناء وتطوير المواقع والمتاجر الإلكترونية وأنظمة التجارة للبراندات النامية.','url':SITE_URL,'logo':`${SITE_URL}/assets/cartmakers-new-logo.webp`};
+  const data=project?{'@context':'https://schema.org','@type':'CreativeWork','@id':`${pageUrl}#project`,'name':project.title,'description':project.summary,'url':pageUrl,'image':image,'inLanguage':'ar-EG','publisher':{'@id':`${SITE_URL}/#organization`}}:pathname==='/'?[{'@context':'https://schema.org',...organization},{'@context':'https://schema.org','@type':'WebSite','@id':`${SITE_URL}/#website`,'name':'CartMakers','url':SITE_URL,'inLanguage':'ar-EG','publisher':{'@id':`${SITE_URL}/#organization`}}]:{'@context':'https://schema.org','@type':'WebPage','@id':`${pageUrl}#webpage`,'name':title,'description':description,'url':pageUrl,'inLanguage':'ar-EG','publisher':{'@id':`${SITE_URL}/#organization`},'isPartOf':{'@id':`${SITE_URL}/#website`}};
   schema=document.createElement('script');schema.id='cartmakers-schema';schema.type='application/ld+json';schema.textContent=JSON.stringify(data);document.head.appendChild(schema);
 }
 
 function App(){
   const [diagnosticResult,setDiagnosticResult]=useState(null);
-  const projectSlug=window.location.pathname.match(/^\/projects\/([^/]+)/)?.[1];
+  const normalizedPath=normalizePathname();
+  const projectSlug=normalizedPath.match(/^\/projects\/([^/]+)/)?.[1];
   useEffect(()=>{updateSeo(projectSlug);const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('is-visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));return()=>observer.disconnect()},[projectSlug]);
   const [menu,setMenu]=useState(false),[openFaq,setOpenFaq]=useState(0),[sent,setSent]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');
   const [selectedSite,setSelectedSite]=useState('wp-7000');
@@ -162,8 +171,8 @@ function App(){
   async function submit(e){e.preventDefault();setBusy(true);setError('');const data=Object.fromEntries(new FormData(e.currentTarget));data.package={platform:selectedPackage.platform,name:selectedPackage.name,price:selectedPackage.price};data.addons=selectedAddons.map(id=>{const a=marketingAddons.find(x=>x.id===id);return {name:a.name,price:a.price,note:a.note}});data.estimated_total=total;data.diagnostic=diagnosticResult;try{const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const j=await r.json();if(!r.ok||!j.ok)throw new Error(j.message||'حصلت مشكلة، حاول مرة أخرى.');setSent(true);e.currentTarget.reset()}catch(err){setError(err.message)}finally{setBusy(false)}}
   const closeMenu=()=>setMenu(false);
   if(projectSlug) return <ProjectPage project={projects.find(p=>p.slug===projectSlug)} />;
-  if(window.location.pathname==='/portfolio') return <PortfolioPage />;
-  if(window.location.pathname==='/policies') return <PoliciesPage />;
+  if(normalizedPath==='/portfolio') return <PortfolioPage />;
+  if(normalizedPath==='/policies') return <PoliciesPage />;
   return <div dir="rtl">
     <header className="nav shell"><a className="brand" href="#top" onClick={closeMenu}><img className="brand-logo" src="/assets/cartmakers-new-logo.webp" alt="CartMakers — اللوجو الرسمي وأنظمة التجارة"/></a><button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-label="القائمة">{menu?<X/>:<Menu/>}</button><nav className={menu?'nav-links open':'nav-links'}><a href="#services" onClick={closeMenu}>بنشتغل على إيه؟</a><a href="#packages" onClick={closeMenu}>الباقات</a><a href="/portfolio" onClick={closeMenu}>أعمالنا</a><a href="#process" onClick={closeMenu}>الطريقة</a><a className="nav-cta" href="#contact" onClick={closeMenu}>ابدأ من هنا <ArrowLeft size={16}/></a></nav></header>
     <main id="top">

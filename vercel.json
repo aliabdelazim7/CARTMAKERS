@@ -2,14 +2,62 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
-    "api/*.php": {"runtime": "vercel-php@0.9.0"}
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
+    }
   },
   "rewrites": [
-    {"source": "/api/contact", "destination": "/api/contact.php"}
+    {
+      "source": "/api/contact",
+      "destination": "/api/contact.php"
+    }
   ],
   "headers": [
-    {"source": "/sitemap.xml", "headers": [{"key": "Content-Type", "value": "application/xml; charset=utf-8"}, {"key": "Cache-Control", "value": "public, max-age=3600"}]},
-    {"source": "/robots.txt", "headers": [{"key": "Content-Type", "value": "text/plain; charset=utf-8"}, {"key": "Cache-Control", "value": "public, max-age=3600"}]},
-    {"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}]}
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*/",
+      "destination": "/:path*",
+      "permanent": true
+    }
   ]
 }

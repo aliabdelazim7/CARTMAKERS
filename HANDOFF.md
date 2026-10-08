@@ -486,3 +486,27 @@ git push origin main
 - لا تضف `overflow-x:hidden` كحل سريع قبل فهم سبب overflow؛ تم إصلاح السبب الحقيقي في `.form-trap`.
 - لا تضغط أو تستبدل اللوجو الرسمي بملف غير متوافق.
 - لا تعتمد على Lighthouse وحده؛ افحص أيضًا HTML الخام والـbrowser DOM والروابط.
+
+
+## 16. SEO implementation phase — 2026-10-08
+
+تم تنفيذ الإصلاحات الأولى ذات الأولوية العالية:
+
+- توحيد `pathname` داخل React بإزالة trailing slash من المسارات غير الجذرية قبل routing وSEO metadata.
+- إضافة redirect دائم من المسارات المنتهية بـ`/` إلى المسار القياسي داخل `vercel.json`.
+- توحيد عنوان ووصف وcanonical وOpen Graph image حسب route، مع استخدام صورة المشروع في صفحات المشاريع.
+- توحيد JSON-LD بين prerender وReact عبر `cartmakers-schema` واحد، مع فصل `Organization` و`WebSite` و`WebPage` و`CreativeWork`.
+- إضافة `npm run test:seo` لفحص ملفات الـprerender والـtitle والـdescription وH1 وcanonical وJSON-LD لكل URL في Sitemap.
+- تم إنشاء `SEO_STRATEGY.md` وتقارير المحاور داخل `seo-reports/`.
+
+التحقق الأخير:
+
+```bash
+npm run build
+npm run test:seo
+git diff --check
+```
+
+النتيجة: build ناجح، وSEO check ناجح لكل 18 route. لم يتم بعد نشر هذه التغييرات أو طلب إعادة فحصها في Search Console.
+
+الخطوات التالية: نشر التعديلات، اختبار `/portfolio/` و`/projects/velora/` بعد hydration على Production، ثم بدء صفحات الخدمات/المحتوى فقط بعد حسم أسماء الباقات ونطاق الخدمات والبيانات التشغيلية المؤكدة.

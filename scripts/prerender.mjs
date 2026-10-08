@@ -46,11 +46,13 @@ function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type =
     .replace('<div id="root"></div>', `<div id="root">${body}</div>`)
     .replace(/\s*<noscript>[\s\S]*?<\/noscript>/, '');
   const pageUrl = `${origin}${path}`;
-  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', url: origin, logo: `${origin}/assets/cartmakers-new-logo.webp`, email: 'hello@cartmakers.com' };
+  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', description: 'شركة متخصصة في بناء وتطوير المواقع والمتاجر الإلكترونية وأنظمة التجارة للبراندات النامية.', url: origin, logo: `${origin}/assets/cartmakers-new-logo.webp` };
   const schema = path === '/'
-    ? [{ '@context': 'https://schema.org', ...organization, description }, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${origin}/#website`, name: 'CartMakers', url: origin, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }]
-    : { '@context': 'https://schema.org', '@type': type === 'article' ? 'CreativeWork' : 'WebPage', name: title, description, url: pageUrl, image: socialImage, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` }, isPartOf: { '@id': `${origin}/#website` } };
-  return html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(schema)}</script>\n  </head>`);
+    ? [{ '@context': 'https://schema.org', ...organization }, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${origin}/#website`, name: 'CartMakers', url: origin, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }]
+    : type === 'article'
+      ? { '@context': 'https://schema.org', '@type': 'CreativeWork', '@id': `${pageUrl}#project`, name: title, description, url: pageUrl, image: socialImage, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }
+      : { '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${pageUrl}#webpage`, name: title, description, url: pageUrl, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` }, isPartOf: { '@id': `${origin}/#website` } };
+  return html.replace('</head>', `<script id="cartmakers-schema" type="application/ld+json">${JSON.stringify(schema)}</script>\n  </head>`);
 }
 
 const homeBody = `<main lang="ar" dir="rtl"><h1>CartMakers — أنظمة تجارة تشتغل وتكبر</h1><p>نبني ونحسن المتاجر والمواقع وأنظمة التجارة للبراندات النامية: المتجر، Checkout، الدفع، التوصيل، التتبع والنمو.</p><h2>نصلح الرحلة من أول Click لحد Repeat Purchase.</h2><p><a href="/portfolio">شاهد أعمال CartMakers</a> · <a href="/#contact">ابدأ من هنا</a></p></main>`;
@@ -59,12 +61,12 @@ const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — �
 const policyBody = `<main lang="ar" dir="rtl"><h1>سياسات التعامل مع CartMakers</h1><p>توضح هذه الصفحة الدفعة المقدمة، نطاق العمل، التعديلات، التسليم، الملكية، ومسؤوليات العميل وCartMakers.</p><h2>الدفعة المقدمة</h2><p>يتم سداد 50% عند البداية لتأكيد الحجز وبدء التنفيذ، و50% قبل الإطلاق أو التسليم النهائي.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/">ارجع إلى الموقع</a></p></main>`;
 
 const pages = [
-  ['', page({ title: 'CartMakers | أنظمة التجارة والنمو', description: 'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة: المتجر، الـCheckout، الدفع، التوصيل، التتبع والنمو.', path: '/', body: homeBody })],
-  ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })],
-  ['policies', page({ title: 'سياسات التعامل — CartMakers', description: 'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.', path: '/policies', body: policyBody })]
+  ['', page({ title: 'CartMakers | تصميم وتطوير المواقع والمتاجر الإلكترونية', description: 'CartMakers بتبني وتطوّر المواقع والمتاجر الإلكترونية وأنظمة التجارة من الـCheckout حتى التتبع والنمو.', path: '/', body: homeBody })],
+  ['portfolio', page({ title: 'نماذج CartMakers | أعمال المواقع والمتاجر الإلكترونية', description: 'استكشف نماذج CartMakers في المتاجر الإلكترونية والمواقع المؤسسية والتعليمية والتحريرية.', path: '/portfolio', body: portfolioBody })],
+  ['policies', page({ title: 'سياسات CartMakers | الدفع ونطاق العمل', description: 'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.', path: '/policies', body: policyBody })]
 ];
 for (const [slug, projectTitle, summary] of projects) {
-  pages.push([`projects/${slug}`, page({ title: `${projectTitle} — CartMakers`, description: summary, path: `/projects/${slug}`, body: `<main lang="ar" dir="rtl"><h1>${esc(projectTitle)}</h1><p>${esc(summary)}</p><p><a href="/portfolio">ارجع إلى كل الأعمال</a> · <a href="/#contact">ابدأ مشروعك</a></p></main>`, type: 'article' })]);
+  pages.push([`projects/${slug}`, page({ title: `${projectTitle} | مرجع متجر وموقع — CartMakers`, description: summary, path: `/projects/${slug}`, body: `<main lang="ar" dir="rtl"><h1>${esc(projectTitle)}</h1><p>${esc(summary)}</p><p><a href="/portfolio">ارجع إلى كل الأعمال</a> · <a href="/#contact">ابدأ مشروعك</a></p></main>`, type: 'article' })]);
 }
 for (const [route, html] of pages) {
   const target = route ? join(dist.pathname, route, 'index.html') : join(dist.pathname, 'index.html');
