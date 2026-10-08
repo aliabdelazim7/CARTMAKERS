@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 
 const dist = new URL('../dist/', import.meta.url);
 const base = await readFile(new URL('index.html', dist), 'utf8');
-const origin = 'https://cartmakers.vercel.app';
+const origin = 'https://www.cart-makers.com';
 const socialImage = `${origin}/assets/cartmakers-primary-light.svg`;
 
 const projects = [

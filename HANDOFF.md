@@ -240,7 +240,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Route-specific HTML وقت البناء عبر `scripts/prerender.mjs`.
 - Metadata منفصلة للـPortfolio وصفحات المشاريع.
 - الدومين الرسمي الحالي هو `https://www.cart-makers.com`.
-- ملاحظة مهمة: الـcanonical الحالي ما زال يشير إلى `https://cartmakers.vercel.app` ويحتاج تحديثًا في مهمة SEO مستقلة.
+- تم تحديث الـcanonical وOpen Graph وSitemap وRobots لاستخدام الدومين الرسمي.
 - Open Graph metadata.
 - Twitter Card metadata.
 - `og:locale` و`og:locale:alternate`.
@@ -342,7 +342,7 @@ https://www.cart-makers.com/
 ```
 
 `https://cart-makers.com` يحوّل إلى `https://www.cart-makers.com` بحالة 308.
-رابط `https://cartmakers.vercel.app` القديم يعيد 404 حاليًا.
+رابط `https://cartmakers.vercel.app` القديم لم يعد هو العنوان الأساسي للموقع.
 
 آخر commit منشور:
 ```text

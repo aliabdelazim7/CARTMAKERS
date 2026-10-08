@@ -19,7 +19,7 @@ const marketingAddons = [
   { id:'cro', name:'CRO & Checkout Fixes', price:3500, note:'مراجعة وتحسين رحلة التحويل والـCheckout' },
   { id:'photo', name:'Product Photography', price:0, note:'تصوير المنتجات — تسعير حسب العدد والموقع' }
 ];
-const SITE_URL = 'https://cartmakers.vercel.app';
+const SITE_URL = 'https://www.cart-makers.com';
 const SOCIAL_IMAGE = `${SITE_URL}/assets/cartmakers-primary-light.svg`;
 
 const projects = [
