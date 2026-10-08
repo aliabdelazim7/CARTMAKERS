@@ -538,3 +538,48 @@ git diff --check
 6. **P3 — صيانة المحتوى:** إضافة Case Studies وReviews حقيقية بموافقة أصحابها، وتحسين الصور عبر responsive `srcset` عند زيادة حجم المحتوى.
 
 لا يُنصح حاليًا بإنشاء `/en` أو صفحات منصات كثيرة أو FAQ schema قبل وجود قرار محتوى وتشغيلي واضح لكل صفحة.
+
+
+## 18. Browser parity, ecommerce service, and performance — 2026-10-08
+
+تم تنفيذ أول جزء من خطة التطوير:
+
+- إضافة `npm run test:browser` باستخدام Chromium headless.
+- الاختبار يشغّل Production preview ثم يفحص DOM بعد hydration لمسارات:
+  - `/`
+  - `/portfolio` و`/portfolio/`
+  - `/projects/velora` و`/projects/velora/`
+  - `/services/ecommerce`
+- الاختبار يتحقق من تطابق `title` و`canonical`، وجود H1 واحد، ووجود JSON-LD واحد لكل route.
+- النتيجة: `Browser smoke passed after hydration for 6 route variants.`
+- تم إنشاء صفحة indexable جديدة على `/services/ecommerce` بمحتوى مستقل عن تطوير المتاجر الإلكترونية، وإضافتها إلى prerender وSitemap وroute manifest وredirect trailing slash.
+- بعد الإضافة أصبح فحص SEO ناجحًا لكل 19 route.
+
+### Lighthouse / Core Web Vitals lab measurements
+
+تم القياس على Production homepage في 2026-10-08 باستخدام Lighthouse CLI وChromium. هذه قياسات Lab وليست بديلًا عن بيانات CrUX الميدانية.
+
+| Metric | Mobile | Desktop |
+|---|---:|---:|
+| Performance score | 44/100 | 87/100 |
+| FCP | 5.0s | 1.2s |
+| LCP | 5.0s | 1.2s |
+| Speed Index | 5.4s | 2.9s |
+| Total Blocking Time | 1,310ms | 0ms |
+| CLS | 0.015 | 0.043 |
+| TTI | 7.3s | 1.2s |
+| Root document response | 1,040ms | 650ms |
+
+الاستنتاج: CLS جيد في البيئتين، وLCP/TBT على Desktop جيدان، لكن Mobile يحتاج أولوية أداء واضحة. الأولويات التالية هي تقليل زمن استجابة المستند، تخفيف الموارد الحاجبة للرسم، وتقليل JavaScript الذي يصل للموبايل قبل التفاعل.
+
+### أوامر التحقق
+
+```bash
+npm run build
+npm run test:seo
+npm run test:browser
+```
+
+### الخطوة التالية للأداء
+
+قبل إضافة صفحات خدمات كثيرة، نراجع CSS الحاجب للرسم، تقسيم JavaScript، تحميل الخطوط والصور، وTTFB على Production، ثم نعيد تشغيل Lighthouse Mobile وDesktop للمقارنة بنفس الإعدادات.

@@ -65,6 +65,11 @@
       "permanent": true
     },
     {
+      "source": "/services/ecommerce/",
+      "destination": "/services/ecommerce",
+      "permanent": true
+    },
+    {
       "source": "/projects/:slug/",
       "destination": "/projects/:slug",
       "permanent": true
