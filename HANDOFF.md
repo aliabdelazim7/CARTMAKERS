@@ -346,7 +346,7 @@ https://www.cart-makers.com/
 
 آخر commit منشور:
 ```text
-331674d — Document policies and WhatsApp integration status
+179986a — Use official cart-makers domain for SEO
 ```
 
 التحديثات المرتبطة الأخيرة:
@@ -357,7 +357,7 @@ https://www.cart-makers.com/
 آخر تحديثات مرتبطة أقدم:
 - `f30517d` — Require customer phone in brief form.
 
-حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_Hp9b5RcRMwUN51CThxBWmnYu7YXV`):
+حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_4kQQvzK5AnQhBXkqk2eoTv32p4cu`):
 
 ```text
 READY / production
