@@ -150,6 +150,9 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - تم تحديث `index.html` و`src/main.jsx` و`scripts/prerender.mjs` وبيانات Open Graph/Twitter/Schema لاستخدام اللوجو الجديد.
 - تم ضبط أبعاد `.brand-logo` لتناسب الـwordmark الجديد، مع مراجعة احتواء الموبايل.
 - ملفات SVG القديمة ما زالت موجودة كأصول legacy، لكنها لم تعد مستخدمة في الواجهة أو الـSEO.
+- تم إصلاح أيقونة التاب بعد ملاحظة ظهورها بشكل غير واضح: الملف الحالي `public/assets/cartmakers-favicon.png` بصيغة PNG شفافة ومقاس 48×48، ومعلن في `index.html` مع cache-busting `?v=2`.
+- تم إضافة `apple-touch-icon` بنفس الأيقونة.
+- عنوان التاب الرئيسي أصبح مختصرًا وواضحًا: `CartMakers | أنظمة التجارة والنمو`، وتم توحيده في الـprerender و`updateSeo()`.
 
 الخطوط الحالية محملة من Google Fonts داخل `src/styles.css`:
 

@@ -137,7 +137,7 @@ function setMeta(name, content, property=false){
 function updateSeo(projectSlug){
   const project=projects.find(p=>p.slug===projectSlug);
   const isPortfolio=window.location.pathname==='/portfolio';const isPolicies=window.location.pathname==='/policies';
-  const title=project?`${project.title} — CartMakers`:isPortfolio?'أعمال CartMakers — اللوجو الرسمي وأنظمة التجارة':isPolicies?'سياسات التعامل — CartMakers':'CartMakers — أنظمة تجارة تشتغل وتكبر';
+  const title=project?`${project.title} — CartMakers`:isPortfolio?'أعمال CartMakers — مواقع ومتاجر':isPolicies?'سياسات التعامل — CartMakers':'CartMakers | أنظمة التجارة والنمو';
   const description=project?`${project.summary} مرجع بصري ومعلوماتي من CartMakers.` :isPolicies?'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.':'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة للبراندات اللي عندها طلب.';
   document.title=title;
   setMeta('description',description);

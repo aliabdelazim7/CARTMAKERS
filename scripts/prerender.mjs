@@ -59,7 +59,7 @@ const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — �
 const policyBody = `<main lang="ar" dir="rtl"><h1>سياسات التعامل مع CartMakers</h1><p>توضح هذه الصفحة الدفعة المقدمة، نطاق العمل، التعديلات، التسليم، الملكية، ومسؤوليات العميل وCartMakers.</p><h2>الدفعة المقدمة</h2><p>يتم سداد 50% عند البداية لتأكيد الحجز وبدء التنفيذ، و50% قبل الإطلاق أو التسليم النهائي.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/">ارجع إلى الموقع</a></p></main>`;
 
 const pages = [
-  ['', page({ title: 'CartMakers — أنظمة تجارة تشتغل وتكبر', description: 'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة: المتجر، الـCheckout، الدفع، التوصيل، التتبع والنمو.', path: '/', body: homeBody })],
+  ['', page({ title: 'CartMakers | أنظمة التجارة والنمو', description: 'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة: المتجر، الـCheckout، الدفع، التوصيل، التتبع والنمو.', path: '/', body: homeBody })],
   ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })],
   ['policies', page({ title: 'سياسات التعامل — CartMakers', description: 'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.', path: '/policies', body: policyBody })]
 ];
