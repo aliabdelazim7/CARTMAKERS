@@ -45,7 +45,11 @@ function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type =
     .replace(/(<meta name="twitter:description" content=")[^"]*(" \/>)/, `$1${esc(description)}$2`)
     .replace('<div id="root"></div>', `<div id="root">${body}</div>`)
     .replace(/\s*<noscript>[\s\S]*?<\/noscript>/, '');
-  const schema = { '@context': 'https://schema.org', '@type': type === 'article' ? 'CreativeWork' : 'WebPage', name: title, description, url: `${origin}${path}`, image: socialImage };
+  const pageUrl = `${origin}${path}`;
+  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', url: origin, logo: `${origin}/assets/cartmakers-primary-light.svg`, email: 'hello@cartmakers.com' };
+  const schema = path === '/'
+    ? [{ '@context': 'https://schema.org', ...organization, description }, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${origin}/#website`, name: 'CartMakers', url: origin, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }]
+    : { '@context': 'https://schema.org', '@type': type === 'article' ? 'CreativeWork' : 'WebPage', name: title, description, url: pageUrl, image: socialImage, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` }, isPartOf: { '@id': `${origin}/#website` } };
   return html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(schema)}</script>\n  </head>`);
 }
 
@@ -55,7 +59,7 @@ const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — �
 const policyBody = `<main lang="ar" dir="rtl"><h1>سياسات التعامل مع CartMakers</h1><p>توضح هذه الصفحة الدفعة المقدمة، نطاق العمل، التعديلات، التسليم، الملكية، ومسؤوليات العميل وCartMakers.</p><h2>الدفعة المقدمة</h2><p>يتم سداد 50% عند البداية لتأكيد الحجز وبدء التنفيذ، و50% قبل الإطلاق أو التسليم النهائي.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/">ارجع إلى الموقع</a></p></main>`;
 
 const pages = [
-  ['', base],
+  ['', page({ title: 'CartMakers — أنظمة تجارة تشتغل وتكبر', description: 'CartMakers بتبني وتصلّح وتكبّر أنظمة التجارة: المتجر، الـCheckout، الدفع، التوصيل، التتبع والنمو.', path: '/', body: homeBody })],
   ['portfolio', page({ title: 'أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها', description: 'استكشف مشاريع CartMakers في التجارة الإلكترونية والمواقع المؤسسية والتعليمية والـEditorial.', path: '/portfolio', body: portfolioBody })],
   ['policies', page({ title: 'سياسات التعامل — CartMakers', description: 'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.', path: '/policies', body: policyBody })]
 ];
