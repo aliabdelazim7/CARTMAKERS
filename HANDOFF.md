@@ -247,6 +247,10 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - Meta keywords مرتبطة بالخدمات.
 - JSON-LD مبسط للصفحات prerendered.
 - Sitemap وRobots.
+- Google Search Console verification tag داخل الـHTML الأساسي.
+- Robots metadata صريحة تسمح بالفهرسة ومعاينة الصور والنصوص.
+- Sitemap يتضمن `/policies` مع `lastmod`.
+- JSON-LD أقوى للـOrganization وWebSite وصفحات المشاريع.
 - `404` حقيقي للمشروع غير الموجود بعد إزالة rewrites العامة للصفحات.
 - HTML أولي يحتوي على محتوى قابل للقراءة قبل تنفيذ React في صفحات الـinner routes.
 
@@ -346,7 +350,7 @@ https://www.cart-makers.com/
 
 آخر commit منشور:
 ```text
-179986a — Use official cart-makers domain for SEO
+7c925df — Improve indexing metadata and sitemap
 ```
 
 التحديثات المرتبطة الأخيرة:
