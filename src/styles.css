@@ -92,3 +92,14 @@ img,svg,video{max-width:100%}
 .service-fit{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,8vw,8rem);padding-top:clamp(4rem,8vw,8rem);padding-bottom:clamp(5rem,10vw,10rem)}.service-fit-card{background:var(--ink);color:var(--paper);padding:clamp(2rem,5vw,5rem)}.service-fit-card h2{font-size:clamp(2.4rem,5vw,5rem);line-height:1;letter-spacing:-.06em;margin:1rem 0 1.5rem}.service-fit-card p{color:#cbd5e1;line-height:1.9;font-size:1.1rem;max-width:650px}.service-links{display:flex;flex-direction:column;gap:1.2rem;justify-content:end}.service-links a{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:1rem 0;font-size:1.15rem;color:var(--ink)}
 @media(max-width:800px){.service-hero,.service-intro,.service-fit{grid-template-columns:1fr}.service-hero-card{box-shadow:8px 8px 0 var(--lime)}.service-outcome-grid{grid-template-columns:repeat(2,1fr)}.service-steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.service-outcome-grid,.service-steps{grid-template-columns:1fr}.service-outcome-grid article{min-height:0}.service-hero h1{font-size:3.5rem}}
+
+
+/* Contact channels */
+.footer-contact{display:flex;align-items:center;gap:18px;direction:rtl;font-family:'IBM Plex Sans Arabic',Arial,sans-serif;font-size:11px}
+.footer-contact-actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.footer-contact-actions a{display:inline-flex;align-items:center;gap:5px;color:var(--slate);text-decoration:none;white-space:nowrap}
+.footer-contact-actions a:hover{color:var(--ink)}
+.footer-socials{display:flex;align-items:center;gap:6px;direction:ltr}
+.footer-socials a{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--line);color:var(--slate);text-decoration:none;border-radius:50%}
+.footer-socials a:hover{border-color:var(--ink);color:var(--ink);background:white}
+@media(max-width:1100px){.footer{flex-wrap:wrap;gap:14px;padding-top:22px;padding-bottom:22px}.footer-contact{order:5;width:100%;justify-content:flex-start}}

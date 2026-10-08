@@ -619,3 +619,16 @@ npm run test:browser
 تم إصلاح مشكلة ظهور الصفحة كنص HTML خام خلال أول ثواني التحميل. السبب كان أن prerender يضع محتوى مبسطًا بلا classes داخل `#root`، ثم يستبدله React بعد تحميل JavaScript. تم الآن إنشاء branded initial shell داخل الـprerender يحتوي على الـlogo والـnavigation والـHero وCommerce Control Room، مع Critical CSS inline داخل `<head>`.
 
 تم التحقق باستخدام Chromium مع تعطيل JavaScript بالكامل؛ ظهرت الصفحة منسقة بالهوية البصرية والـHero قبل تشغيل React. كما ظل `npm run test:seo` ناجحًا لكل 19 route و`npm run test:browser` ناجحًا بعد hydration.
+
+
+## 21. Official contact channels — 2026-10-08
+
+تم تحديث بيانات التواصل الرسمية في واجهة الموقع والـfooter وOrganization Schema:
+
+- Facebook: https://www.facebook.com/cart.makerss/?ref=PROFILE_EDIT_xav_ig_profile_page_web#
+- Instagram: https://www.instagram.com/cart.makers/
+- TikTok: https://www.tiktok.com/@cart.makers
+- WhatsApp: `1558227828` عبر `https://wa.me/1558227828`
+- Email: `contact@cart-makers.com`
+
+تظهر الآن روابط البريد وWhatsApp وأيقونات Facebook وInstagram وTikTok داخل الـfooter، مع رسالة WhatsApp ابتدائية جاهزة. لم يتم تغيير Endpoint إرسال نموذج التواصل؛ يظل يعمل عبر إعدادات Telegram الموجودة في بيئة النشر.

@@ -46,7 +46,7 @@ function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type =
     .replace('<div id="root"></div>', `<div id="root">${body}</div>`)
     .replace(/\s*<noscript>[\s\S]*?<\/noscript>/, '');
   const pageUrl = `${origin}${path}`;
-  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', description: 'شركة متخصصة في بناء وتطوير المواقع والمتاجر الإلكترونية وأنظمة التجارة للبراندات النامية.', url: origin, logo: `${origin}/assets/cartmakers-new-logo.webp` };
+  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', description: 'شركة متخصصة في بناء وتطوير المواقع والمتاجر الإلكترونية وأنظمة التجارة للبراندات النامية.', url: origin, logo: `${origin}/assets/cartmakers-new-logo.webp`, email: 'contact@cart-makers.com', sameAs: ['https://www.facebook.com/cart.makerss/?ref=PROFILE_EDIT_xav_ig_profile_page_web#', 'https://www.instagram.com/cart.makers/', 'https://www.tiktok.com/@cart.makers'] };
   const schema = path === '/'
     ? [{ '@context': 'https://schema.org', ...organization }, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${origin}/#website`, name: 'CartMakers', url: origin, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }]
     : type === 'article'
