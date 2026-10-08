@@ -20,7 +20,7 @@ const marketingAddons = [
   { id:'photo', name:'Product Photography', price:0, note:'تصوير المنتجات — تسعير حسب العدد والموقع' }
 ];
 const SITE_URL = 'https://www.cart-makers.com';
-const SOCIAL_IMAGE = `${SITE_URL}/assets/cartmakers-new-logo.webp`;
+const SOCIAL_IMAGE = `${SITE_URL}/assets/cartmakers-social-cover.png`;
 
 const projects = [
   {slug:'eg-moms-recipes',title:"Eg Mom's Recipes",category:'Editorial / Food Blog',tag:'مجلة وصفات مصرية',image:'/portfolio/eg-moms-recipes.webp',url:'https://egmomrecipes.unaux.com/?i=1',summary:'تجربة Editorial تحمل قصة أكل بيتي مصري وتحوّلها إلى وصفات وتصنيفات قابلة للاكتشاف.',brief:'مدونة أكل تعتمد على الهوية والثقافة قبل الوصفة: قصة، أطباق مميزة، Blog، وتصنيفات واضحة للتصفح.',insight:'القيمة ليست في الوصفة وحدها؛ في الإحساس بالبيت والذاكرة الذي يجعل القارئ يريد العودة.',features:['Hero قصصي','Signature dishes','Blog وتصنيفات وصفات','هوية مصرية دافئة']},

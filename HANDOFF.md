@@ -599,3 +599,16 @@ npm run test:browser
 - Root document response: `990ms`
 
 النتيجة تؤكد أن إضافة صفحة الخدمة لم تغيّر المشكلة الأساسية: الأولوية الآن هي تحسين Mobile performance، خصوصًا TTFB والـJavaScript والموارد الحاجبة للرسم.
+
+
+## 19. Search appearance image fix — 2026-10-08
+
+تم تحسين أصول الظهور في نتائج البحث والمشاركة:
+
+- إضافة `public/favicon.ico` حقيقي متعدد المقاسات في جذر الموقع، مع إبقاء PNG كـfallback.
+- إضافة `cartmakers-social-cover.png` بمقاس 1640×856 كصورة Open Graph وTwitter مناسبة بدل استخدام ملف اللوجو العريض وحده.
+- إضافة `og:image:secure_url` و`og:image:type` و`og:image:width` و`og:image:height`.
+- تحديث React وprerender لاستخدام صورة المشاركة الجديدة.
+- ملفات الصور الحالية تستجيب من Production بحالة `200`.
+
+ملاحظة: Google لا يعرض صورة Open Graph في كل نتيجة بحث عادية؛ ظهور الصورة يعتمد على نوع النتيجة وقرار Google. أما favicon فقد يحتاج إعادة الزحف ووقتًا حتى يتغير في SERP بسبب cache Google، لكن الرابط الثابت في الجذر أصبح متاحًا الآن.

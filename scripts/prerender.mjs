@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path';
 const dist = new URL('../dist/', import.meta.url);
 const base = await readFile(new URL('index.html', dist), 'utf8');
 const origin = 'https://www.cart-makers.com';
-const socialImage = `${origin}/assets/cartmakers-new-logo.webp`;
+const socialImage = `${origin}/assets/cartmakers-social-cover.png`;
 
 const projects = [
   ['velora', 'Velora Flowers', 'متجر زهور ومناسبات يضع المناسبة والتوصيل وتجربة الهدية في مقدمة الرحلة.'],
