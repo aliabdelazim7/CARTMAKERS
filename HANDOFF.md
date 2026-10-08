@@ -158,6 +158,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - تم تجهيز نسخة حزمة هوية محدثة باسم `CartMakers-brand-starter-kit-updated.zip` تحتوي على نفس المجلد، بالإضافة إلى نسخة اللوجو المرفق الأصلية والنسخة المحسنة.
 - تم تعديل الكافر ليعود إلى Dark Mode مثل النسخة السابقة، مع استخدام `cartmakers-new-logo-dark-flat.png` المسطّح على نفس لون الخلفية `#101828`؛ لا يوجد مستطيل أبيض أو هالة حول اللوجو.
 - تم استبدال صورة البروفايل بنسخة Avatar مركزة على رمز العربة فقط، بمقاس 1080×1080 ومصممة للقص الدائري في Facebook وInstagram وTikTok. الملف الأساسي: `brand-social/Social Profile Pic/cartmakers-profile-1080.png`.
+- تم تحسين جودة Avatar باستخدام معالجة رفع دقة مع الحفاظ على التصميم، وأصبحت هناك نسخة HD بدقة 1920×1920 باسم `cartmakers-profile-social-1080-hd.png`، مع نسخة 1080 محسنة للرفع المباشر.
 
 الخطوط الحالية محملة من Google Fonts داخل `src/styles.css`:
 

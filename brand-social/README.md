@@ -3,7 +3,8 @@
 أصول جاهزة للاستخدام من هوية CartMakers:
 
 - `cartmakers-profile-1080.png` — صورة Avatar مربعة، 1080×1080، مصممة للقص الدائري في فيسبوك وإنستجرام وتيك توك.
-- `cartmakers-profile-social-1080.png` — نفس نسخة الـAvatar باسم وصفي.
+- `cartmakers-profile-social-1080.png` — نسخة 1080 محسنة للرفع المباشر.
+- `cartmakers-profile-social-1080-hd.png` — النسخة الأصلية المحسنة بدقة 1920×1920 للاحتفاظ بها أو الرفع على المنصات التي تقبل دقة أعلى.
 - `cartmakers-cover-1640x856.png` — صورة Cover عريضة، 1640×856، مناسبة كنسخة Facebook/عامّة.
 
 ## قواعد الاستخدام
