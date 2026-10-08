@@ -2,7 +2,8 @@
 
 أصول جاهزة للاستخدام من هوية CartMakers:
 
-- `cartmakers-profile-1080.png` — صورة بروفايل مربعة، 1080×1080.
+- `cartmakers-profile-1080.png` — صورة Avatar مربعة، 1080×1080، مصممة للقص الدائري في فيسبوك وإنستجرام وتيك توك.
+- `cartmakers-profile-social-1080.png` — نفس نسخة الـAvatar باسم وصفي.
 - `cartmakers-cover-1640x856.png` — صورة Cover عريضة، 1640×856، مناسبة كنسخة Facebook/عامّة.
 
 ## قواعد الاستخدام
@@ -13,3 +14,5 @@
 - الألوان المستخدمة من الـBrand Mini-Guide: `#101828` و`#C7F36B` و`#F7F8F5`.
 
 The final deliverables are also duplicated in `Social Profile Pic/` for direct handoff with the brand folder.
+
+نسخة البروفايل الحالية مركزة على رمز العربة فقط بدون نص طويل، حتى تظل واضحة داخل دائرة المنصة وعلى الشاشات الصغيرة.
