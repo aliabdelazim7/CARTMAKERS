@@ -385,7 +385,7 @@ https://www.cart-makers.com/
 
 آخر commit منشور:
 ```text
-3618d86 — Set explicit sitemap response headers
+c4fdb38 — Replace site branding with supplied CartMakers logo
 ```
 
 التحديثات المرتبطة الأخيرة:
@@ -396,7 +396,7 @@ https://www.cart-makers.com/
 آخر تحديثات مرتبطة أقدم:
 - `f30517d` — Require customer phone in brief form.
 
-حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_7KTCUixn9twAqZdyRQMYWXZ9XBui`، مبني من Commit `3618d86`):
+حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_9kHFt6o1qZ7pYTLLs5whYAscMvC5`، مبني من Commit `c4fdb38`):
 
 ```text
 تم التحقق من الاستجابة Live على `https://www.cart-makers.com/sitemap.xml` بعد هذا النشر: `200 / application/xml / XML valid`.
