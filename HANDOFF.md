@@ -159,6 +159,8 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - تم تعديل الكافر ليعود إلى Dark Mode مثل النسخة السابقة، مع استخدام `cartmakers-new-logo-dark-flat.png` المسطّح على نفس لون الخلفية `#101828`؛ لا يوجد مستطيل أبيض أو هالة حول اللوجو.
 - تم استبدال صورة البروفايل بنسخة Avatar مركزة على رمز العربة فقط، بمقاس 1080×1080 ومصممة للقص الدائري في Facebook وInstagram وTikTok. الملف الأساسي: `brand-social/Social Profile Pic/cartmakers-profile-1080.png`.
 - تم تحسين جودة Avatar باستخدام معالجة رفع دقة مع الحفاظ على التصميم، وأصبحت هناك نسخة HD بدقة 1920×1920 باسم `cartmakers-profile-social-1080-hd.png`، مع نسخة 1080 محسنة للرفع المباشر.
+- بسبب قص Instagram للصورة الدائرية، تم اعتماد `cartmakers-profile-platform-safe-1080.png` كنسخة البروفايل الأساسية بمساحة أمان أكبر، مع نسخة HD آمنة 1920×1920.
+- تم تجهيز أغلفة منفصلة داخل `Social Profile Pic`: Facebook بمقاس 1640×856، وInstagram Story/Reel بمقاس 1080×1920، وTikTok Video Cover بمقاس 1080×1920. إنستجرام وتيك توك لا يملكان Cover ثابتًا لصفحة البروفايل مثل فيسبوك.
 
 الخطوط الحالية محملة من Google Fonts داخل `src/styles.css`:
 

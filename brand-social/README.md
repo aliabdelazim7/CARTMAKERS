@@ -17,3 +17,13 @@
 The final deliverables are also duplicated in `Social Profile Pic/` for direct handoff with the brand folder.
 
 نسخة البروفايل الحالية مركزة على رمز العربة فقط بدون نص طويل، حتى تظل واضحة داخل دائرة المنصة وعلى الشاشات الصغيرة.
+
+
+## مقاسات المنصات
+
+- `cartmakers-profile-platform-safe-1080.png` — Avatar آمن 1080×1080، مناسب للصورة الدائرية في Facebook وInstagram وTikTok بدون قص للوجو.
+- `cartmakers-cover-facebook-1640x856.png` — غلاف Facebook أفقي عالي الدقة.
+- `cartmakers-cover-instagram-1080x1920.png` — غلاف Story/Reel عمودي لإنستجرام؛ إنستجرام لا يملك Cover ثابتًا لصفحة البروفايل مثل فيسبوك.
+- `cartmakers-cover-tiktok-1080x1920.png` — غلاف/Thumbnail عمودي لفيديوهات TikTok؛ تيك توك لا يملك Cover ثابتًا لصفحة البروفايل.
+
+تم وضع العناصر المهمة داخل منطقة آمنة في المنتصف حتى لا تختفي تحت القص أو عناصر واجهة المنصة.
