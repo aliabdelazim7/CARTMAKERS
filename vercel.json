@@ -55,8 +55,18 @@
   ],
   "redirects": [
     {
-      "source": "/:path*/",
-      "destination": "/:path*",
+      "source": "/portfolio/",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/policies/",
+      "destination": "/policies",
+      "permanent": true
+    },
+    {
+      "source": "/projects/:slug/",
+      "destination": "/projects/:slug",
       "permanent": true
     }
   ]
