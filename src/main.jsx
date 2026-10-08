@@ -184,7 +184,7 @@ function App(){
   const [diagnosticResult,setDiagnosticResult]=useState(null);
   const normalizedPath=normalizePathname();
   const projectSlug=normalizedPath.match(/^\/projects\/([^/]+)/)?.[1];
-  useEffect(()=>{updateSeo(projectSlug);const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('is-visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));return()=>observer.disconnect()},[projectSlug]);
+  useEffect(()=>{updateSeo(projectSlug);if(typeof window.fbq==='function')window.fbq('track','PageView');const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('is-visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));return()=>observer.disconnect()},[projectSlug]);
   const [menu,setMenu]=useState(false),[openFaq,setOpenFaq]=useState(0),[sent,setSent]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');
   const [selectedSite,setSelectedSite]=useState('wp-7000');
   const [selectedAddons,setSelectedAddons]=useState([]);

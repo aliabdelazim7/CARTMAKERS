@@ -632,3 +632,13 @@ npm run test:browser
 - Email: `contact@cart-makers.com`
 
 تظهر الآن روابط البريد وWhatsApp وأيقونات Facebook وInstagram وTikTok داخل الـfooter، مع رسالة WhatsApp ابتدائية جاهزة. لم يتم تغيير Endpoint إرسال نموذج التواصل؛ يظل يعمل عبر إعدادات Telegram الموجودة في بيئة النشر.
+
+
+## 22. Meta Pixel — 2026-10-08
+
+تم ربط Meta Pixel الرسمي بالموقع باستخدام Pixel ID: `1837452137251661`.
+
+- Loader و`fbq('init')` موجودان في `index.html`.
+- `PageView` يعمل عبر JavaScript عند تحميل الصفحة وعند الانتقال بين SPA routes.
+- يوجد fallback عبر `<noscript>` للزوار الذين لا يشغلون JavaScript.
+- لم تتم إضافة Events تحويل إضافية بعد؛ المتاح حاليًا هو PageView فقط حتى يتم تحديد أحداث الأعمال المطلوبة بدقة.
