@@ -153,6 +153,9 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - تم إصلاح أيقونة التاب بعد ملاحظة ظهورها بشكل غير واضح: الملف الحالي `public/assets/cartmakers-favicon.png` بصيغة PNG شفافة ومقاس 48×48، ومعلن في `index.html` مع cache-busting `?v=2`.
 - تم إضافة `apple-touch-icon` بنفس الأيقونة.
 - عنوان التاب الرئيسي أصبح مختصرًا وواضحًا: `CartMakers | أنظمة التجارة والنمو`، وتم توحيده في الـprerender و`updateSeo()`.
+- تم تحديث أصول السوشيال باستخدام اللوجو المرفق الحالي، وليس الـSVG القديم الموجود في الـStarter Kit.
+- داخل الريبو يوجد `brand-social/Social Profile Pic/` ويحتوي على `cartmakers-profile-1080.png` و`cartmakers-cover-1640x856.png`.
+- تم تجهيز نسخة حزمة هوية محدثة باسم `CartMakers-brand-starter-kit-updated.zip` تحتوي على نفس المجلد، بالإضافة إلى نسخة اللوجو المرفق الأصلية والنسخة المحسنة.
 
 الخطوط الحالية محملة من Google Fonts داخل `src/styles.css`:
 
