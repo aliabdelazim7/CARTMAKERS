@@ -254,6 +254,31 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - `404` حقيقي للمشروع غير الموجود بعد إزالة rewrites العامة للصفحات.
 - HTML أولي يحتوي على محتوى قابل للقراءة قبل تنفيذ React في صفحات الـinner routes.
 
+### Google Search Console — آخر حالة
+
+- تم وضع كود التحقق داخل `index.html`:
+  `numI3mJ990GYjj5Pj2YUkmehjy1X0hsIfVqxfyZ7f_k`.
+- الـSitemap الرسمي الذي يجب تقديمه في Search Console هو:
+  `https://www.cart-makers.com/sitemap.xml`.
+- بعد ظهور رسالة `Couldn't fetch` في Search Console، تم فحص الرابط مباشرة باستخدام User-Agents الخاصة بـGoogle وكانت النتيجة:
+  - HTTP `200`.
+  - `Content-Type: application/xml; charset=utf-8`.
+  - XML صالح وقابل للتحليل.
+  - 18 URL داخل الملف.
+  - `/policies` موجودة داخل الـSitemap.
+- تم تثبيت Headers صريحة في `vercel.json` لـ`/sitemap.xml` و`/robots.txt` مع Cache-Control لمدة ساعة.
+- بعد النشر الأخير، الفحص المباشر أعاد `status=200` و`xml=valid` عند استخدام `Googlebot`.
+- إذا بقيت الحالة القديمة في Search Console، احذف الإدخال وأعد إضافة `sitemap.xml` ثم انتظر إعادة القراءة؛ الحالة القديمة لا تعكس بالضرورة الاستجابة الحالية.
+
+### خطوات Search Console التالية
+
+1. افتح **Sitemaps** داخل Property الدومين الرسمي.
+2. أعد إرسال `sitemap.xml`.
+3. استخدم **URL Inspection** واطلب الفهرسة للصفحة الرئيسية و`/portfolio` و`/policies`.
+4. بعد بدء الزيارات، راقب **Pages / Indexing** و**Performance / Queries**.
+
+> لا يوجد في الكود ما يضمن ظهور الموقع فورًا في Google؛ قرار الفهرسة وتوقيته بيد Google وقد يستغرق من ساعات إلى عدة أيام.
+
 **قبل أي تغيير في الـdomain:** يجب تحديث كل هذه الملفات/الأماكن:
 
 - `index.html`
@@ -350,7 +375,7 @@ https://www.cart-makers.com/
 
 آخر commit منشور:
 ```text
-7c925df — Improve indexing metadata and sitemap
+3618d86 — Set explicit sitemap response headers
 ```
 
 التحديثات المرتبطة الأخيرة:
@@ -361,10 +386,10 @@ https://www.cart-makers.com/
 آخر تحديثات مرتبطة أقدم:
 - `f30517d` — Require customer phone in brief form.
 
-حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_4kQQvzK5AnQhBXkqk2eoTv32p4cu`):
+حالة آخر Vercel deployment وقت كتابة هذا الملف (Production deployment `dpl_7KTCUixn9twAqZdyRQMYWXZ9XBui`، مبني من Commit `3618d86`):
 
 ```text
-READY / production
+تم التحقق من الاستجابة Live على `https://www.cart-makers.com/sitemap.xml` بعد هذا النشر: `200 / application/xml / XML valid`.
 ```
 
 **قاعدة العمل المطلوبة:** أي تعديل جديد يجب أن يمر بهذا الترتيب:
@@ -414,7 +439,6 @@ git push origin main
 
 - إضافة Reviews حقيقية بعد الحصول على موافقة أصحابها.
 - ربط Google Search Console وقياس Queries وIndex Coverage.
-- التأكد من إعداد domain رسمي إذا أصبح متاحًا بدل `vercel.app`.
 - تحسين font loading إذا أمكن self-hosting بدون تدهور بصري.
 
 ### أولوية متوسطة
