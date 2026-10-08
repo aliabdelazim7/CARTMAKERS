@@ -583,3 +583,19 @@ npm run test:browser
 ### الخطوة التالية للأداء
 
 قبل إضافة صفحات خدمات كثيرة، نراجع CSS الحاجب للرسم، تقسيم JavaScript، تحميل الخطوط والصور، وTTFB على Production، ثم نعيد تشغيل Lighthouse Mobile وDesktop للمقارنة بنفس الإعدادات.
+
+
+### Post-deploy performance rerun
+
+بعد نشر commit `edfe892` وإتاحة `/services/ecommerce` على Production، أُعيد تشغيل Lighthouse Mobile على الصفحة الرئيسية:
+
+- Performance: `44/100`
+- FCP: `5.2s`
+- LCP: `5.2s`
+- Speed Index: `5.8s`
+- TBT: `1,010ms`
+- CLS: `0.054`
+- TTI: `8.5s`
+- Root document response: `990ms`
+
+النتيجة تؤكد أن إضافة صفحة الخدمة لم تغيّر المشكلة الأساسية: الأولوية الآن هي تحسين Mobile performance، خصوصًا TTFB والـJavaScript والموارد الحاجبة للرسم.
