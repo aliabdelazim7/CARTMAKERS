@@ -4,7 +4,7 @@ import { dirname, join } from 'node:path';
 const dist = new URL('../dist/', import.meta.url);
 const base = await readFile(new URL('index.html', dist), 'utf8');
 const origin = 'https://www.cart-makers.com';
-const socialImage = `${origin}/assets/cartmakers-primary-light.svg`;
+const socialImage = `${origin}/assets/cartmakers-new-logo.webp`;
 
 const projects = [
   ['velora', 'Velora Flowers', 'متجر زهور ومناسبات يضع المناسبة والتوصيل وتجربة الهدية في مقدمة الرحلة.'],
@@ -46,7 +46,7 @@ function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type =
     .replace('<div id="root"></div>', `<div id="root">${body}</div>`)
     .replace(/\s*<noscript>[\s\S]*?<\/noscript>/, '');
   const pageUrl = `${origin}${path}`;
-  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', url: origin, logo: `${origin}/assets/cartmakers-primary-light.svg`, email: 'hello@cartmakers.com' };
+  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', url: origin, logo: `${origin}/assets/cartmakers-new-logo.webp`, email: 'hello@cartmakers.com' };
   const schema = path === '/'
     ? [{ '@context': 'https://schema.org', ...organization, description }, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${origin}/#website`, name: 'CartMakers', url: origin, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }]
     : { '@context': 'https://schema.org', '@type': type === 'article' ? 'CreativeWork' : 'WebPage', name: title, description, url: pageUrl, image: socialImage, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` }, isPartOf: { '@id': `${origin}/#website` } };

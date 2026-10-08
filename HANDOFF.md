@@ -141,6 +141,16 @@ npm run preview -- --host 0.0.0.0 --port 4174
 
 **مهم:** لا تستخدم نصًا عاديًا بدل اللوجو، ولا تضف CSS عامة مثل `img { width: ... }` قد تصغر اللوجو. يوجد class واضح اسمه `.brand-logo`.
 
+### آخر تحديث للهوية — 2026-10-08
+
+- تم استبدال اللوجو المرئي في الـHeader والـFooter وصفحات Portfolio/Projects/Policies باللوجو المرفق الجديد.
+- الملفات الحالية المستخدمة:
+  - `public/assets/cartmakers-new-logo.webp` — اللوجو الكامل المرفق بعد قص المساحات البيضاء الزائدة.
+  - `public/assets/cartmakers-new-mark.webp` — نسخة مربعة من رمز العربة للاستخدام كـfavicon.
+- تم تحديث `index.html` و`src/main.jsx` و`scripts/prerender.mjs` وبيانات Open Graph/Twitter/Schema لاستخدام اللوجو الجديد.
+- تم ضبط أبعاد `.brand-logo` لتناسب الـwordmark الجديد، مع مراجعة احتواء الموبايل.
+- ملفات SVG القديمة ما زالت موجودة كأصول legacy، لكنها لم تعد مستخدمة في الواجهة أو الـSEO.
+
 الخطوط الحالية محملة من Google Fonts داخل `src/styles.css`:
 
 - IBM Plex Sans Arabic
