@@ -156,6 +156,7 @@ npm run preview -- --host 0.0.0.0 --port 4174
 - تم تحديث أصول السوشيال باستخدام اللوجو المرفق الحالي، وليس الـSVG القديم الموجود في الـStarter Kit.
 - داخل الريبو يوجد `brand-social/Social Profile Pic/` ويحتوي على `cartmakers-profile-1080.png` و`cartmakers-cover-1640x856.png`.
 - تم تجهيز نسخة حزمة هوية محدثة باسم `CartMakers-brand-starter-kit-updated.zip` تحتوي على نفس المجلد، بالإضافة إلى نسخة اللوجو المرفق الأصلية والنسخة المحسنة.
+- تم تعديل الكافر ليعود إلى Dark Mode مثل النسخة السابقة، مع استخدام `cartmakers-new-logo-dark.png` الشفاف؛ لا يوجد مستطيل أبيض خلف اللوجو.
 
 الخطوط الحالية محملة من Google Fonts داخل `src/styles.css`:
 
