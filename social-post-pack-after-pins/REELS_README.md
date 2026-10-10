@@ -1,19 +1,21 @@
-# CartMakers — Generated Egyptian-Voice Reels
+# CartMakers — Dynamic Egyptian-Voice Reels
 
-تم تحديث الحزمة بأربعة Reels عمودية جاهزة للنشر:
+تمت إعادة تنفيذ الريلز الأربعة كـMotion Reels حقيقية بدل صورة ثابتة مع Voice-over فقط.
 
-1. `01-reel-before-ads/reel.mp4`
-2. `02-product-page-checklist/reel.mp4`
-3. `03-clean-proof/reel.mp4`
-4. `04-platform-choice/reel.mp4`
+## ما تم إضافته
 
-## المواصفات
+- Transcript متزامن يظهر على مراحل داخل الفيديو.
+- دخول وخروج للنصوص مع Slide Transitions.
+- Progress bar يوضح تقدم الريل.
+- Sound Effects خفيفة: Click وWhoosh عند انتقال البطاقات.
+- Voice-over مصري موحد، هادئ وواثق.
+- هوية CartMakers ثابتة مع نصوص عربية واضحة.
 
-- MP4، مقاس 1080×1920، نسبة 9:16.
-- صوت رجل مصري واحد ثابت، هادئ وواثق.
-- حركة Motion Graphics خفيفة على التصميمات المعتمدة.
-- لا توجد شخصيات أو لقطات مولدة قد تشوّه النص العربي أو الشعار.
-- لا توجد موسيقى تنافس التعليق الصوتي.
-- ملفات `voice.wav` و`reel-spec.md` محفوظة بجانب كل Reel.
+## الملفات
 
-تم اختيار موشن جرافيك منظم بدل لقطات AI عشوائية حتى يبدو المحتوى مصممًا يدويًا بواسطة Agency حقيقية ويحافظ على وضوح الهوية والنص العربي.
+- `01-reel-before-ads/reel.mp4`
+- `02-product-page-checklist/reel.mp4`
+- `03-clean-proof/reel.mp4`
+- `04-platform-choice/reel.mp4`
+
+كل مجلد يحتوي أيضًا على `dynamic-frames/` و`reel-spec.md` و`voice.wav`.

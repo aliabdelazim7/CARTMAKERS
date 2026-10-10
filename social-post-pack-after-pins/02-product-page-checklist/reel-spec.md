@@ -1,9 +1,9 @@
-# Reel Production Spec
+# Dynamic Reel Production Spec
 
-- **Format:** MP4, vertical 9:16, 1080×1920.
-- **Visual treatment:** Motion graphics built from the approved CartMakers cover; subtle controlled zoom and fade, no generated characters, no distorted logos, no fake claims.
-- **Voice:** Same male Egyptian Arabic voice profile across all four Reels (Charon, ar-EG), calm and confident.
-- **Duration:** 16.520000s.
-- **Audio:** Clean voice-over, no competing background music.
-- **Source cover:** 01.png.
-- **Voice source:** voice.wav.
+- Format: MP4, 1080×1920, 9:16.
+- Transcript: 5 timed caption cards with staged text reveal.
+- Transitions: slide-left xfade between cards, controlled zoom, fade timing.
+- Sound design: low-volume click and whoosh at card transitions.
+- Voice: unified male Egyptian Arabic voice, calm and confident.
+- Duration: 16.52s.
+- Source audio: voice.wav.
