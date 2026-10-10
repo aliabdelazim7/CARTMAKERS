@@ -7,6 +7,7 @@ const routes = [
   { path: '/', title: 'تصميم وتطوير المواقع والمتاجر الإلكترونية', canonical: '/' },
   { path: '/portfolio', title: 'أعمال المواقع والمتاجر الإلكترونية', canonical: '/portfolio' },
   { path: '/portfolio/', title: 'أعمال المواقع والمتاجر الإلكترونية', canonical: '/portfolio' },
+  { path: '/about', title: 'عن CartMakers', canonical: '/about' },
   { path: '/projects/velora', title: 'Velora Flowers', canonical: '/projects/velora' },
   { path: '/projects/velora/', title: 'Velora Flowers', canonical: '/projects/velora' },
   { path: '/services/ecommerce', title: 'تطوير متجر إلكتروني', canonical: '/services/ecommerce' },

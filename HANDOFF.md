@@ -654,3 +654,11 @@ npm run test:browser
 نتيجة Lighthouse Production بتاريخ 2026-10-10: Mobile Performance = 56، FCP = 2.6s، LCP = 3.1s، TBT = 1,450ms، CLS = 0.007. Desktop Performance = 39، FCP = 2.1s، LCP = 2.6s، TBT = 1,500ms، CLS = 0.008. Layout Shift جيد، لكن الأولوية التالية هي تقسيم JavaScript وتأجيل Meta Pixel والعمل على تقليل TBT.
 
 تمت إعادة إرسال `https://www.cart-makers.com/sitemap.xml` في Search Console بتاريخ 2026-10-10، وظهرت رسالة Success. كما تم طلب إعادة فهرسة الصفحة الرئيسية ووضعها في Priority crawl queue. يلزم لاحقًا طلب فهرسة صفحات الخدمات ومركز المعرفة حسب أولوية Google، ثم إعداد أو مراجعة Google Business Profile من الحساب المالك باستخدام بيانات حقيقية فقط.
+
+## 24. Brand Entity SEO — CartMakers / Cart Makers / كارت ميكرز — 2026-10-10
+
+تم تنفيذ ربط صيغ الاسم الثلاثة بكيان واحد بدل تكرار الكلمات بشكل مصطنع. أُضيفت `alternateName` إلى Organization وWebSite، مع الحفاظ على `CartMakers` كاسم الموقع الأساسي.
+
+تم إنشاء صفحة `/about` بعنوان `عن CartMakers | Cart Makers | كارت ميكرز` تشرح أن الصيغ الثلاثة تشير إلى نفس الشركة والدومين الرسمي، وتوضح خدمات الشركة وتربطها بالـPortfolio والخدمات. أصبحت الصفحة ضمن Sitemap وRoute Manifest، ونجح SEO check على 30 Route وBrowser smoke على 17 Route variant.
+
+ملف `BRAND_ENTITY_SEO.md` يحتوي على القواعد والمصادر الرسمية. لا ننشئ صفحات منفصلة لكل تهجئة، ولا نكرر الصيغ في كل عنوان، ولا نستخدم روابط أو Profiles وهمية؛ الهدف هو بناء كيان حقيقي بإشارات متسقة ومحتوى مفيد.
