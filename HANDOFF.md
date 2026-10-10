@@ -662,3 +662,58 @@ npm run test:browser
 تم إنشاء صفحة `/about` بعنوان `عن CartMakers | Cart Makers | كارت ميكرز` تشرح أن الصيغ الثلاثة تشير إلى نفس الشركة والدومين الرسمي، وتوضح خدمات الشركة وتربطها بالـPortfolio والخدمات. أصبحت الصفحة ضمن Sitemap وRoute Manifest، ونجح SEO check على 30 Route وBrowser smoke على 17 Route variant.
 
 ملف `BRAND_ENTITY_SEO.md` يحتوي على القواعد والمصادر الرسمية. لا ننشئ صفحات منفصلة لكل تهجئة، ولا نكرر الصيغ في كل عنوان، ولا نستخدم روابط أو Profiles وهمية؛ الهدف هو بناء كيان حقيقي بإشارات متسقة ومحتوى مفيد.
+
+## 25. Current project status and next review point — 2026-10-10
+
+### الحالة العامة
+
+الفرع الحالي هو `main` ومتزامن مع `origin/main`. آخر commit هو `d800a4b Strengthen multilingual brand entity SEO`. ملفات `CartMakers-brand-kit-professional-curated.zip` و`brand-kit-clean/` موجودة محليًا كملفات غير متتبعة، ولا تدخل في آخر deployment حتى يتم اعتمادها وإضافتها صراحةً.
+
+### ما تم إنجازه في الموقع
+
+الموقع يعمل كتطبيق React/Vite مع prerender وقت البناء. توجد الصفحة الرئيسية، Portfolio، صفحات المشاريع، Policies، صفحة Ecommerce، خمس صفحات خدمات، مركز معرفة بخمس مسارات، وصفحة About للكيان التجاري. الـSitemap يحتوي الآن على 30 URL عامة، بينما Route Manifest يحتوي على المسارات الأساسية ويستخدم `/projects/:slug` كمسار ديناميكي للمشاريع.
+
+تم إصلاح ظهور HTML الخام قبل hydration بإضافة Critical Shell، وتحميل الخطوط محليًا، والحفاظ على LCP من دون reveal animation في الـHero. تم تنفيذ روابط التواصل الرسمية: Facebook وInstagram وTikTok وWhatsApp والبريد `contact@cart-makers.com`، مع Meta Pixel ID `1837452137251661` وEvents للتحويلات.
+
+### SEO والهوية التجارية
+
+تم توحيد `CartMakers` كاسم أساسي، مع `Cart Makers` و`كارت ميكرز` كـ`alternateName` داخل WebSite وOrganization Schema. صفحة `/about` تشرح الصيغ الثلاثة بشكل طبيعي وتربطها بالدومين الرسمي. تمت إعادة إرسال Sitemap في Search Console بتاريخ 2026-10-10 بنجاح، وتم طلب إعادة فهرسة الصفحة الرئيسية ووضعها في Priority crawl queue.
+
+تم تنفيذ route-specific metadata وcanonical وOpen Graph وTwitter Cards وJSON-LD وRobots وSitemap. فحص SEO الحالي ينجح على 30 Route، وBrowser smoke ينجح بعد hydration على 17 Route variant.
+
+### المحتوى والتحويلات
+
+تم إعداد خطة SEO لمدة 90 يومًا، خطة CRO، دراسة المنافسين، وتحليل نمط التصميم المرجعي. تم إنشاء ثلاثة Carousels مثبتة، كل Carousel من أربع شرائح: About، Problems، وWorkflow، مع ملفات مصدر ومعاينات وREADME. تم أيضًا إنشاء Prompt Reference لنظام تصميم منشورات CartMakers، وحزمة هوية مهنية منظمة.
+
+### الأداء
+
+آخر Lighthouse على Production للصفحة الرئيسية: Mobile Performance = 56، LCP = 3.1s، TBT = 1,450ms، CLS = 0.007. Desktop Performance = 39، LCP = 2.6s، TBT = 1,500ms، CLS = 0.008. الـCLS جيد، لكن TBT هو أكبر مشكلة تقنية حاليًا؛ سببه الأساسي JavaScript والتفاعلات الكثيفة في الصفحة الرئيسية.
+
+### الخطوة التالية المقترحة
+
+الأولوية البرمجية التالية هي تقليل TBT عبر تقسيم JavaScript، تأجيل Meta Pixel إلى `load/idle`، وتقليل الكود الذي يُحمّل في الصفحة الرئيسية، ثم إعادة تشغيل Lighthouse. بالتوازي، نضيف Case Studies أصلية ونتابع Queries وCTR وPages من Search Console بدل إنشاء صفحات تهجئة متشابهة.
+
+الأولوية الخارجية هي توحيد الاسم والوصف والدومين في Google Business Profile وFacebook وInstagram وTikTok وLinkedIn، ثم الحصول على Reviews حقيقية وMentions من عملاء أو شركاء حقيقيين. لا ننشئ Profiles وهمية، ولا نشتري روابط، ولا نكرر الكلمات بهدف التلاعب بالترتيب.
+
+### أوامر التحقق الحالية
+
+```bash
+npm ci
+npm run build
+npm run test:seo
+npm run test:browser
+```
+
+النتائج الأخيرة: `Prerendered 30 public routes`، و`SEO check passed for 30 prerendered routes`، و`Browser smoke passed after hydration for 17 route variants`.
+
+### الملفات المرجعية الأساسية
+
+- `HANDOFF.md` — نقطة التسليم الرئيسية.
+- `SEO_GROWTH_ROADMAP.md` — خارطة SEO لمدة 90 يومًا.
+- `SEO_STRATEGY.md` — استراتيجية SEO ونتائج التدقيق.
+- `BRAND_ENTITY_SEO.md` — استراتيجية CartMakers / Cart Makers / كارت ميكرز.
+- `LOCAL_SEO_CHECKLIST.md` — إعدادات Local SEO وGoogle Business Profile.
+- `PERFORMANCE_BASELINE.md` — قياسات Lighthouse وخطة تحسين الأداء.
+- `CRO_NEXT_STEPS.md` — خطوات رفع التحويلات.
+- `COMPETITOR_CONTENT_STUDY.md` و`REF_STYLE_ANALYSIS.md` — دراسة المنافسين والأسلوب البصري.
+- `social-carousels/README.md` — حزمة الكاروسيلات الجاهزة للنشر.
