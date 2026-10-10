@@ -641,7 +641,7 @@ npm run test:browser
 - Loader و`fbq('init')` موجودان في `index.html`.
 - `PageView` يعمل عبر JavaScript عند تحميل الصفحة وعند الانتقال بين SPA routes.
 - يوجد fallback عبر `<noscript>` للزوار الذين لا يشغلون JavaScript.
-- لم تتم إضافة Events تحويل إضافية بعد؛ المتاح حاليًا هو PageView فقط حتى يتم تحديد أحداث الأعمال المطلوبة بدقة.
+- تمت إضافة Events تحويل مخصصة: `brief_started` و`brief_submitted` و`whatsapp_clicked` و`service_cta_clicked` و`insight_cta_clicked`.
 
 ## 23. SEO growth priorities — 2026-10-10
 
@@ -653,4 +653,4 @@ npm run test:browser
 
 نتيجة Lighthouse Production بتاريخ 2026-10-10: Mobile Performance = 56، FCP = 2.6s، LCP = 3.1s، TBT = 1,450ms، CLS = 0.007. Desktop Performance = 39، FCP = 2.1s، LCP = 2.6s، TBT = 1,500ms، CLS = 0.008. Layout Shift جيد، لكن الأولوية التالية هي تقسيم JavaScript وتأجيل Meta Pixel والعمل على تقليل TBT.
 
-بعد النشر، يجب إعادة إرسال `https://www.cart-makers.com/sitemap.xml` في Search Console وطلب فهرسة صفحات الخدمات ومركز المعرفة، ثم إعداد أو مراجعة Google Business Profile من الحساب المالك باستخدام بيانات حقيقية فقط.
+تمت إعادة إرسال `https://www.cart-makers.com/sitemap.xml` في Search Console بتاريخ 2026-10-10، وظهرت رسالة Success. كما تم طلب إعادة فهرسة الصفحة الرئيسية ووضعها في Priority crawl queue. يلزم لاحقًا طلب فهرسة صفحات الخدمات ومركز المعرفة حسب أولوية Google، ثم إعداد أو مراجعة Google Business Profile من الحساب المالك باستخدام بيانات حقيقية فقط.
