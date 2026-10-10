@@ -7,73 +7,51 @@ const origin = 'https://www.cart-makers.com';
 const socialImage = `${origin}/assets/cartmakers-social-cover.png`;
 
 const projects = [
-  ['velora', 'Velora Flowers', 'متجر زهور ومناسبات يضع المناسبة والتوصيل وتجربة الهدية في مقدمة الرحلة.'],
-  ['vervac', 'Vervac Animal Care', 'تجربة متجر واسعة تجمع المنتجات وقصة العلامة وتصنيفات العناية بالحيوانات.'],
-  ['black-horses', 'Black Horses', 'تجربة Corporate تقود الزائر من الوعد الهندسي إلى الخدمات والمشاريع.'],
-  ['sandy-collection', 'Sandy Collection', 'واجهة متجر مجوهرات تعتمد على الصورة والكولكشن والسعر لتقريب قرار الشراء.'],
-  ['eg-moms-recipes', "Eg Mom's Recipes", 'تجربة Editorial تحمل قصة أكل بيتي مصري وتحوّلها إلى وصفات قابلة للاكتشاف.'],
-  ['pharaohs-stone', 'Pharaohs Stone', 'موقع شركة مقاولات عربية يشرح التخصصات ويعرض نماذج من المشاريع.'],
-  ['islamisch-akademisch', 'Islamisch Akademisch', 'أكاديمية ألمانية اللغة للتعلم الفردي في القرآن والتجويد والدراسات الإسلامية.'],
-  ['ufuqar', 'Ufuqar News Magazine', 'بوابة أخبار عربية تعتمد على الأخبار العاجلة والأقسام المتعددة والمحتوى اليومي.'],
-  ['selim-marketing', 'Selim Marketing', 'متجر عربي للخدمات التسويقية يقسم العرض حسب المنصة ويقرب قرار الشراء.'],
-  ['9ten', '9TEN Store', 'متجر RTL للأحذية يقسم التجربة إلى رجالي ونسائي ويقود إلى المنتجات الجديدة.'],
-  ['la-maison-francaise', 'La Maison Française', 'Landing Page موجهة للأهل تشرح التعلم والمتابعة والخطوة الأولى.'],
-  ['opreva', 'OPREVA', 'متجر Skincare يربط عرض المنتجات بالمكونات والفئات والعروض.'],
-  ['ms-uniforms', 'MS Uniforms', 'تجربة Catalog لمنتجات طبية تعتمد على المقاسات والألوان والتصنيفات.'],
-  ['quran-academy', 'Quran Academy', 'Landing Page تعليمية تشرح البرامج وتضع التسجيل في مقدمة الرحلة.'],
-  ['shopping-online-store', 'Shopping Online Store', 'متجر عربي لمعدات التخييم والمغامرات يعرض المنتجات ومحتوى يساعد على الاختيار.']
+  ['velora','Velora Flowers','متجر زهور ومناسبات يضع المناسبة والتوصيل وتجربة الهدية في مقدمة الرحلة.','/portfolio/velora.webp'],
+  ['vervac','Vervac Animal Care','تجربة متجر واسعة تجمع المنتجات وقصة العلامة وتصنيفات العناية بالحيوانات.','/portfolio/vervac.webp'],
+  ['black-horses','Black Horses','تجربة Corporate تقود الزائر من الوعد الهندسي إلى الخدمات والمشاريع.','/portfolio/black-horses.webp'],
+  ['sandy-collection','Sandy Collection','واجهة متجر مجوهرات تعتمد على الصورة والكولكشن والسعر لتقريب قرار الشراء.','/portfolio/sandy-collection.webp'],
+  ['eg-moms-recipes',"Eg Mom's Recipes",'تجربة Editorial تحمل قصة أكل بيتي مصري وتحوّلها إلى وصفات قابلة للاكتشاف.','/portfolio/eg-moms-recipes.webp'],
+  ['pharaohs-stone','Pharaohs Stone','موقع شركة مقاولات عربية يشرح التخصصات ويعرض نماذج من المشاريع.','/portfolio/pharaohs-stone.webp'],
+  ['islamisch-akademisch','Islamisch Akademisch','أكاديمية ألمانية اللغة للتعلم الفردي في القرآن والتجويد والدراسات الإسلامية.','/portfolio/islamisch-akademisch.webp'],
+  ['ufuqar','Ufuqar News Magazine','بوابة أخبار عربية تعتمد على الأخبار العاجلة والأقسام المتعددة والمحتوى اليومي.','/portfolio/ufuqar.webp'],
+  ['selim-marketing','Selim Marketing','متجر عربي للخدمات التسويقية يقسم العرض حسب المنصة ويقرب قرار الشراء.','/portfolio/selim-marketing.webp'],
+  ['9ten','9TEN Store','متجر RTL للأحذية يقسم التجربة إلى رجالي ونسائي ويقود إلى المنتجات الجديدة.','/portfolio/9ten.webp'],
+  ['la-maison-francaise','La Maison Française','Landing Page موجهة للأهل تشرح التعلم والمتابعة والخطوة الأولى.','/portfolio/la-maison-francaise.webp'],
+  ['opreva','OPREVA','متجر Skincare يربط عرض المنتجات بالمكونات والفئات والعروض.','/portfolio/opreva.webp'],
+  ['ms-uniforms','MS Uniforms','تجربة Catalog لمنتجات طبية تعتمد على المقاسات والألوان والتصنيفات.','/portfolio/ms-uniforms.webp'],
+  ['quran-academy','Quran Academy','Landing Page تعليمية تشرح البرامج وتضع التسجيل في مقدمة الرحلة.','/portfolio/quran-academy.webp'],
+  ['shopping-online-store','Shopping Online Store','متجر عربي لمعدات التخييم والمغامرات يعرض المنتجات ومحتوى يساعد على الاختيار.','/portfolio/shopping-online-store.webp']
 ];
-
-function esc(value) {
-  return String(value).replace(/[&<>"']/g, ch => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[ch]));
-}
-function replaceMeta(html, selector, value) {
-  return html.replace(selector, (full, before, after) => `${before}${esc(value)}${after}`);
-}
-function page({ lang = 'ar', dir = 'rtl', title, description, path, body, type = 'website' }) {
-  let html = base
-    .replace('<html lang="ar" dir="rtl">', `<html lang="${lang}" dir="${dir}">`)
-    .replace(/(<title>)[^<]*(<\/title>)/, `$1${esc(title)}$2`)
-    .replace(/(<meta name="description" content=")[^"]*(" \/>)/, `$1${esc(description)}$2`)
-    .replace(/(<link rel="canonical" href=")[^"]*(" \/>)/, `$1${origin}${path}$2`)
-    .replace(/(<meta property="og:type" content=")[^"]*(" \/>)/, `$1${type}$2`)
-    .replace(/(<meta property="og:title" content=")[^"]*(" \/>)/, `$1${esc(title)}$2`)
-    .replace(/(<meta property="og:description" content=")[^"]*(" \/>)/, `$1${esc(description)}$2`)
-    .replace(/(<meta property="og:url" content=")[^"]*(" \/>)/, `$1${origin}${path}$2`)
-    .replace(/(<meta property="og:locale" content=")[^"]*(" \/>)/, `$1${lang === 'en' ? 'en_US' : 'ar_EG'}$2`)
-    .replace(/(<meta name="twitter:title" content=")[^"]*(" \/>)/, `$1${esc(title)}$2`)
-    .replace(/(<meta name="twitter:description" content=")[^"]*(" \/>)/, `$1${esc(description)}$2`)
-    .replace('<div id="root"></div>', `<div id="root">${body}</div>`)
-    .replace(/\s*<noscript>[\s\S]*?<\/noscript>/, '');
-  const pageUrl = `${origin}${path}`;
-  const organization = { '@type': 'Organization', '@id': `${origin}/#organization`, name: 'CartMakers', description: 'شركة متخصصة في بناء وتطوير المواقع والمتاجر الإلكترونية وأنظمة التجارة للبراندات النامية.', url: origin, logo: `${origin}/assets/cartmakers-new-logo.webp`, email: 'contact@cart-makers.com', sameAs: ['https://www.facebook.com/cart.makerss/?ref=PROFILE_EDIT_xav_ig_profile_page_web#', 'https://www.instagram.com/cart.makers/', 'https://www.tiktok.com/@cart.makers'] };
-  const schema = path === '/'
-    ? [{ '@context': 'https://schema.org', ...organization }, { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${origin}/#website`, name: 'CartMakers', url: origin, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }]
-    : type === 'article'
-      ? { '@context': 'https://schema.org', '@type': 'CreativeWork', '@id': `${pageUrl}#project`, name: title, description, url: pageUrl, image: socialImage, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` } }
-      : { '@context': 'https://schema.org', '@type': 'WebPage', '@id': `${pageUrl}#webpage`, name: title, description, url: pageUrl, inLanguage: 'ar-EG', publisher: { '@id': `${origin}/#organization` }, isPartOf: { '@id': `${origin}/#website` } };
-  return html.replace('</head>', `<script id="cartmakers-schema" type="application/ld+json">${JSON.stringify(schema)}</script>\n  </head>`);
-}
-
-const homeBody = `<div class="prerender-shell"><header class="prerender-nav"><a href="/" aria-label="CartMakers"><img class="prerender-logo" src="/assets/cartmakers-new-logo.webp" alt="CartMakers" width="1259" height="231"></a><nav class="prerender-links"><a href="#services">بنشتغل على إيه؟</a><a href="#packages">الباقات</a><a href="/portfolio">أعمالنا</a><a href="#process">الطريقة</a><a class="prerender-cta" href="/#contact">ابدأ من هنا</a></nav></header><main id="top" lang="ar" dir="rtl"><section class="prerender-hero"><div class="prerender-copy"><span class="prerender-eyebrow">COMMERCE SYSTEMS · GROWTH</span><h1>من أول <em>Click</em><br>لحد Repeat<br><em>Purchase.</em></h1><p>بنحوّل الطلب المتناثر من السوشيال والـMarketplace إلى نظام تجارة يبيع، يتتبع، ويتحسن — من غير وعود وهمية.</p></div><div class="prerender-panel"><small>COMMERCE CONTROL ROOM</small><strong>LIVE FLOW<br>Click → Cart → Repeat</strong><div class="prerender-flow"><span>طلب من السوشيال → متجر وCheckout</span><span>دفع وCOD وتوصيل → تتبع وبيانات</span><span>شراء متكرر → نمو قابل للقياس</span></div></div></section><section id="services"><h2>CartMakers — أنظمة تجارة تشتغل وتكبر</h2><p>نبني ونحسن المتاجر والمواقع وأنظمة التجارة للبراندات النامية.</p><p><a href="/portfolio">شاهد أعمال CartMakers</a> · <a href="/#contact">ابدأ من هنا</a></p></section></main></div>`;
-const portfolioBody = `<main lang="ar" dir="rtl"><h1>أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها</h1><p>مجموعة من مشاريع Ecommerce وCorporate وEducation وEditorial نستخدمها كمرجع بصري لفهم طريقة بناء تجربة أوضح.</p><ul>${projects.map(([slug, title, summary]) => `<li><a href="/projects/${slug}">${esc(title)}</a> — ${esc(summary)}</li>`).join('')}</ul></main>`;
-
-const ecommerceBody = `<main lang="ar" dir="rtl"><h1>تطوير متجر إلكتروني | CartMakers</h1><p>نبني ونطوّر متاجر إلكترونية أوضح من الـCatalog حتى الـCheckout والدفع والشحن والقياس.</p><h2>ما الذي نبنيه؟</h2><ul><li>بنية كتالوج وتصفح تساعد على الاختيار</li><li>Cart وCheckout أقل احتكاكًا</li><li>دفع وCOD وشحن ضمن نطاق واضح</li><li>Tracking أساسي قبل التوسع</li></ul><p><a href="/#contact">اطلب مكالمة</a> · <a href="/portfolio">استكشف الأعمال المرجعية</a></p></main>`;
-
-const policyBody = `<main lang="ar" dir="rtl"><h1>سياسات التعامل مع CartMakers</h1><p>توضح هذه الصفحة الدفعة المقدمة، نطاق العمل، التعديلات، التسليم، الملكية، ومسؤوليات العميل وCartMakers.</p><h2>الدفعة المقدمة</h2><p>يتم سداد 50% عند البداية لتأكيد الحجز وبدء التنفيذ، و50% قبل الإطلاق أو التسليم النهائي.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/">ارجع إلى الموقع</a></p></main>`;
-
-const pages = [
-  ['', page({ title: 'CartMakers | تصميم وتطوير المواقع والمتاجر الإلكترونية', description: 'CartMakers بتبني وتطوّر المواقع والمتاجر الإلكترونية وأنظمة التجارة من الـCheckout حتى التتبع والنمو.', path: '/', body: homeBody })],
-  ['portfolio', page({ title: 'نماذج CartMakers | أعمال المواقع والمتاجر الإلكترونية', description: 'استكشف نماذج CartMakers في المتاجر الإلكترونية والمواقع المؤسسية والتعليمية والتحريرية.', path: '/portfolio', body: portfolioBody })],
-  ['policies', page({ title: 'سياسات CartMakers | الدفع ونطاق العمل', description: 'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.', path: '/policies', body: policyBody })],
-  ['services/ecommerce', page({ title: 'تطوير متجر إلكتروني | CartMakers', description: 'نبني ونطوّر متاجر إلكترونية أوضح من الـCatalog حتى الـCheckout والدفع والشحن والقياس.', path: '/services/ecommerce', body: ecommerceBody })]
+const services = [
+  ['wordpress','تطوير WordPress','نبني مواقع WordPress مرنة للبراندات والشركات، مع بنية محتوى واضحة، Responsive، SEO أساسي، وتسليم يمكن تشغيله.'],
+  ['shopify','تطوير Shopify والمنصات التجارية','نساعد العلامات النامية على إطلاق متجر Shopify أو منصة تجارة مناسبة، من الـTheme والكتالوج حتى Checkout والتشغيل.'],
+  ['checkout','تحسين Checkout وCRO','نراجع تجربة Checkout ونقاط التسريب في المتجر الإلكتروني، من صفحة المنتج حتى الدفع والتأكيد والتوصيل.'],
+  ['tracking','Tracking وAnalytics','نثبت أساسًا عمليًا للـTracking وAnalytics حتى تعرف العلامات أين يأتي الطلب وأين تتوقف الرحلة.'],
+  ['website','تصميم موقع تعريفي','نبني مواقع تعريفية للشركات والبراندات تشرح العرض، تثبت الثقة، وتحوّل الزيارة إلى خطوة تواصل واضحة.']
 ];
-for (const [slug, projectTitle, summary] of projects) {
-  pages.push([`projects/${slug}`, page({ title: `${projectTitle} | مرجع متجر وموقع — CartMakers`, description: summary, path: `/projects/${slug}`, body: `<main lang="ar" dir="rtl"><h1>${esc(projectTitle)}</h1><p>${esc(summary)}</p><p><a href="/portfolio">ارجع إلى كل الأعمال</a> · <a href="/#contact">ابدأ مشروعك</a></p></main>`, type: 'article' })]);
+const articles = [
+  ['checkout-audit','كيف تعرف أن متجرَك يحتاج إلى مراجعة Checkout؟','علامات عملية تساعدك على اكتشاف احتكاك Checkout قبل زيادة ميزانية الإعلانات أو الزيارات.'],
+  ['launch-checklist','7 نقاط قبل إطلاق متجر إلكتروني','Checklist عملية قبل إطلاق متجر إلكتروني: المحتوى، المنتجات، الدفع، الشحن، الموبايل، القياس، والتسليم.'],
+  ['woocommerce-or-shopify','WooCommerce أم Shopify: كيف تختار؟','طريقة عملية لمقارنة WooCommerce وShopify حسب التشغيل والدفع والشحن والمحتوى، وليس حسب الشهرة فقط.'],
+  ['why-visits-dont-convert','لماذا لا تتحول زيارات المتجر إلى طلبات؟','أسباب عملية لانخفاض تحويلات المتجر الإلكتروني، من الرسالة والكتالوج إلى Checkout والقياس.']
+];
+function esc(value){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+function layout(content){return `<div class="prerender-shell"><header class="prerender-nav"><a href="/" aria-label="CartMakers"><img class="prerender-logo" src="/assets/cartmakers-new-logo.webp" alt="CartMakers" width="1259" height="231"></a><nav class="prerender-links"><a href="/services/ecommerce">الخدمات</a><a href="/portfolio">أعمالنا</a><a href="/insights">المعرفة</a><a class="prerender-cta" href="/#contact">ابدأ من هنا</a></nav></header>${content}</div>`;}
+function page({title,description,path,body,type='website',schemaType='WebPage'}){
+  let html=base.replace('<html lang="ar" dir="rtl">',`<html lang="ar" dir="rtl">`).replace(/(<title>)[^<]*(<\/title>)/,`$1${esc(title)}$2`).replace(/(<meta name="description" content=")[^"]*(" \/>)/,`$1${esc(description)}$2`).replace(/(<link rel="canonical" href=")[^"]*(" \/>)/,`$1${origin}${path}$2`).replace(/(<meta property="og:title" content=")[^"]*(" \/>)/,`$1${esc(title)}$2`).replace(/(<meta property="og:description" content=")[^"]*(" \/>)/,`$1${esc(description)}$2`).replace(/(<meta property="og:url" content=")[^"]*(" \/>)/,`$1${origin}${path}$2`).replace(/(<meta name="twitter:title" content=")[^"]*(" \/>)/,`$1${esc(title)}$2`).replace(/(<meta name="twitter:description" content=")[^"]*(" \/>)/,`$1${esc(description)}$2`).replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace(/\s*<noscript>[\s\S]*?<\/noscript>/g,'');
+  const url=`${origin}${path}`; const org={'@type':'Organization','@id':`${origin}/#organization`,name:'CartMakers',description:'شركة متخصصة في بناء وتطوير المواقع والمتاجر الإلكترونية وأنظمة التجارة للبراندات النامية.',url:origin,logo:`${origin}/assets/cartmakers-new-logo.webp`,email:'contact@cart-makers.com',sameAs:['https://www.facebook.com/cart.makerss/','https://www.instagram.com/cart.makers/','https://www.tiktok.com/@cart.makers']};
+  let schema=path==='/'?[{'@context':'https://schema.org',...org},{'@context':'https://schema.org','@type':'WebSite','@id':`${origin}/#website`,name:'CartMakers',url:origin,inLanguage:'ar-EG',publisher:{'@id':`${origin}/#organization`}}]:{'@context':'https://schema.org','@type':schemaType,'@id':`${url}#${schemaType.toLowerCase()}`,name:title,description,url,image:socialImage,inLanguage:'ar-EG',publisher:{'@id':`${origin}/#organization`},isPartOf:{'@id':`${origin}/#website`}};
+  return html.replace('</head>',`<script id="cartmakers-schema" type="application/ld+json">${JSON.stringify(schema)}</script>\n</head>`);
 }
-for (const [route, html] of pages) {
-  const target = route ? join(dist.pathname, route, 'index.html') : join(dist.pathname, 'index.html');
-  await mkdir(dirname(target), { recursive: true });
-  await writeFile(target, html);
-}
+const homeBody=layout(`<main id="top" lang="ar" dir="rtl"><section class="prerender-hero"><div class="prerender-copy"><span class="prerender-eyebrow">COMMERCE SYSTEMS · GROWTH</span><h1>من أول <em>Click</em><br>لحد Repeat<br><em>Purchase.</em></h1><p>بنحوّل الطلب المتناثر من السوشيال والـMarketplace إلى نظام تجارة يبيع، يتتبع، ويتحسن — من غير وعود وهمية.</p></div><div class="prerender-panel"><small>COMMERCE CONTROL ROOM</small><strong>LIVE FLOW<br>Click → Cart → Repeat</strong><div class="prerender-flow"><span>طلب من السوشيال → متجر وCheckout</span><span>دفع وCOD وتوصيل → تتبع وبيانات</span><span>شراء متكرر → نمو قابل للقياس</span></div></div></section><section id="services"><h2>CartMakers — أنظمة تجارة تشتغل وتكبر</h2><p>نبني ونحسن المتاجر والمواقع وأنظمة التجارة للبراندات النامية.</p><p><a href="/services/ecommerce">تطوير متجر إلكتروني</a> · <a href="/portfolio">شاهد الأعمال</a> · <a href="/insights">اقرأ المعرفة</a></p></section></main>`);
+const portfolioBody=layout(`<main class="prerender-content" lang="ar" dir="rtl"><h1>أعمال CartMakers — مواقع ومتاجر يمكن مراجعتها</h1><p>مشاريع Ecommerce وCorporate وEducation وEditorial نستخدمها كمرجع لفهم طريقة بناء تجربة أوضح.</p><ul>${projects.map(([slug,title,summary,image])=>`<li><a href="/projects/${slug}">${esc(title)}</a><p>${esc(summary)}</p><img src="${image}" alt="${esc(title)} — مشروع CartMakers" width="893" height="768" loading="lazy"></li>`).join('')}</ul></main>`);
+const policiesBody=layout(`<main class="prerender-content" lang="ar" dir="rtl"><h1>سياسات التعامل مع CartMakers</h1><p>توضح هذه الصفحة الدفعة المقدمة، نطاق العمل، التعديلات، التسليم، الملكية، ومسؤوليات العميل وCartMakers.</p><h2>الدفعة المقدمة</h2><p>يتم سداد 50% عند البداية لتأكيد الحجز وبدء التنفيذ، و50% قبل الإطلاق أو التسليم النهائي.</p><h2>وضوح النطاق</h2><p>أي صفحات أو منتجات أو تكاملات خارج النطاق يتم تقييمها وتسعيرها منفصلًا قبل التنفيذ.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/">ارجع إلى الموقع</a></p></main>`);
+const ecommerceBody=layout(`<main class="prerender-content" lang="ar" dir="rtl"><h1>تطوير متجر إلكتروني | CartMakers</h1><p>نبني ونطوّر متاجر إلكترونية أوضح من الـCatalog حتى الـCheckout والدفع والشحن والقياس.</p><h2>ما الذي نبنيه؟</h2><ul><li>بنية كتالوج وتصفح تساعد على الاختيار</li><li>Cart وCheckout أقل احتكاكًا</li><li>دفع وCOD وشحن ضمن نطاق واضح</li><li>Tracking أساسي قبل التوسع</li></ul><h2>طريقة العمل</h2><p>نفهم الرحلة، نرتب العرض، نبني ونختبر، ثم نسلّم ونقيس.</p><p><a href="/#contact">اطلب مكالمة</a> · <a href="/portfolio">استكشف الأعمال</a></p></main>`);
+const pages=[['',page({title:'CartMakers | تصميم وتطوير المواقع والمتاجر الإلكترونية',description:'CartMakers بتبني وتطوّر المواقع والمتاجر الإلكترونية وأنظمة التجارة من الـCheckout حتى التتبع والنمو.',path:'/',body:homeBody})],['portfolio',page({title:'نماذج CartMakers | أعمال المواقع والمتاجر الإلكترونية',description:'استكشف نماذج CartMakers في المتاجر الإلكترونية والمواقع المؤسسية والتعليمية والتحريرية.',path:'/portfolio',body:portfolioBody})],['policies',page({title:'سياسات CartMakers | الدفع ونطاق العمل',description:'سياسات التعامل مع CartMakers: الدفع، الديبوزيت، النطاق، التسليم، الملكية ومسؤوليات العميل.',path:'/policies',body:policiesBody})],['services/ecommerce',page({title:'تطوير متجر إلكتروني | CartMakers',description:'نبني ونطوّر متاجر إلكترونية أوضح من الـCatalog حتى الـCheckout والدفع والشحن والقياس.',path:'/services/ecommerce',body:ecommerceBody,schemaType:'Service'})]];
+for(const [slug,title,description] of services){const path=`/services/${slug}`;const body=layout(`<main class="prerender-content" lang="ar" dir="rtl"><h1>${esc(title)} | CartMakers</h1><p>${esc(description)}</p><h2>ما الذي نراجعه؟</h2><p>نبدأ من طريقة البيع، المحتوى، تجربة المستخدم، الدفع، الشحن والقياس، ثم نثبت النطاق والخطوات.</p><h2>طريقة العمل</h2><ol><li>نفهم الحالة</li><li>نرتب الأولويات</li><li>نبني ونختبر</li><li>نطلق ونقيس</li></ol><p><a href="/#contact">ابدأ من الـBrief</a> · <a href="/portfolio">شاهد الأعمال</a></p></main>`);pages.push([path.slice(1),page({title:`${title} | CartMakers`,description,path,body,schemaType:'Service'})]);}
+for(const [slug,title,description] of articles){const path=`/insights/${slug}`;const body=layout(`<main class="prerender-content" lang="ar" dir="rtl"><article><div class="section-kicker">CARTMAKERS INSIGHTS</div><h1>${esc(title)}</h1><p>${esc(description)}</p><h2>ابدأ من الرحلة</h2><p>راجع ما يراه العميل، وما يحتاجه ليطمئن، وأين يمكن قياس التسريب قبل اقتراح تغييرات كبيرة.</p><h2>ما الذي نراجعه؟</h2><p>الرسالة، الكتالوج، الموبايل، الدفع، الشحن، النماذج، والـTracking ضمن سياق واحد.</p><p><a href="/#contact">تحدث مع CartMakers</a> · <a href="/services/ecommerce">خدمات التجارة الإلكترونية</a></p></article></main>`);pages.push([path.slice(1),page({title:`${title} | CartMakers`,description,path,body,schemaType:'Article'})]);}
+const insightsIndex=layout(`<main class="prerender-content" lang="ar" dir="rtl"><h1>CartMakers Insights — أفكار تساعدك تبيع أوضح</h1><p>ملاحظات عملية عن المتاجر والمواقع والـCheckout والتتبع والنمو.</p><ul>${articles.map(([slug,title,description])=>`<li><a href="/insights/${slug}">${esc(title)}</a><p>${esc(description)}</p></li>`).join('')}</ul></main>`);pages.push(['insights',page({title:'CartMakers Insights | التجارة والـCheckout والنمو',description:'مقالات عملية من CartMakers عن المتاجر الإلكترونية، المواقع، الـCheckout، التتبع والنمو.',path:'/insights',body:insightsIndex,schemaType:'CollectionPage'})]);
+for(const [slug,title,summary,image] of projects){const path=`/projects/${slug}`;const body=layout(`<main class="prerender-content" lang="ar" dir="rtl"><article><img src="${image}" alt="${esc(title)} — مشروع CartMakers" width="893" height="768"><h1>${esc(title)}</h1><p>${esc(summary)}</p><h2>Brief المشروع</h2><p>تجربة رقمية بُنيت حول وضوح العرض، ترتيب المحتوى، ومسار التواصل أو الشراء المناسب للحالة.</p><p><a href="/portfolio">ارجع إلى كل الأعمال</a> · <a href="/#contact">ابدأ مشروعك</a></p></article></main>`);pages.push([path.slice(1),page({title:`${title} | مرجع متجر وموقع — CartMakers`,description:summary,path,body,schemaType:'CreativeWork'})]);}
+for(const [route,html] of pages){const target=route?join(dist.pathname,route,'index.html'):join(dist.pathname,'index.html');await mkdir(dirname(target),{recursive:true});await writeFile(target,html);}
 console.log(`Prerendered ${pages.length} public routes.`);

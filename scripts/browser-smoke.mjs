@@ -10,6 +10,16 @@ const routes = [
   { path: '/projects/velora', title: 'Velora Flowers', canonical: '/projects/velora' },
   { path: '/projects/velora/', title: 'Velora Flowers', canonical: '/projects/velora' },
   { path: '/services/ecommerce', title: 'تطوير متجر إلكتروني', canonical: '/services/ecommerce' },
+  { path: '/services/wordpress', title: 'WORDPRESS DEVELOPMENT', canonical: '/services/wordpress' },
+  { path: '/services/shopify', title: 'SHOPIFY', canonical: '/services/shopify' },
+  { path: '/services/checkout', title: 'CHECKOUT', canonical: '/services/checkout' },
+  { path: '/services/tracking', title: 'TRACKING', canonical: '/services/tracking' },
+  { path: '/services/website', title: 'BUSINESS WEBSITE', canonical: '/services/website' },
+  { path: '/insights', title: 'CartMakers Insights', canonical: '/insights' },
+  { path: '/insights/checkout-audit', title: 'كيف تعرف', canonical: '/insights/checkout-audit' },
+  { path: '/insights/launch-checklist', title: '7 نقاط', canonical: '/insights/launch-checklist' },
+  { path: '/insights/woocommerce-or-shopify', title: 'WooCommerce أم Shopify', canonical: '/insights/woocommerce-or-shopify' },
+  { path: '/insights/why-visits-dont-convert', title: 'لماذا لا تتحول', canonical: '/insights/why-visits-dont-convert' },
 ];
 
 const server = spawn('npm', ['run', 'preview', '--', '--host', '127.0.0.1', '--port', '4175'], {
@@ -34,8 +44,9 @@ async function waitForServer() {
 function inspect(path) {
   const result = spawnSync(chromium, [
     '--headless=new', '--no-sandbox', '--disable-gpu', '--hide-scrollbars',
-    '--disable-dev-shm-usage', '--virtual-time-budget=3500', '--dump-dom', `${baseUrl}${path}`,
-  ], { encoding: 'utf8', maxBuffer: 12 * 1024 * 1024 });
+    '--disable-dev-shm-usage', '--virtual-time-budget=1600', '--dump-dom', `${baseUrl}${path}`,
+  ], { encoding: 'utf8', maxBuffer: 12 * 1024 * 1024, timeout: 12000 });
+  if (result.error?.code === 'ETIMEDOUT') throw new Error(`${path}: Chromium timed out`);
   if (result.status !== 0) throw new Error(`${path}: Chromium exited with ${result.status}\n${result.stderr}`);
   return result.stdout;
 }
@@ -44,6 +55,7 @@ try {
   await waitForServer();
   const failures = [];
   for (const route of routes) {
+    console.log(`Checking ${route.path}`);
     const html = inspect(route.path);
     const title = html.match(/<title>([^<]*)<\/title>/)?.[1] || '';
     const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1] || '';
@@ -62,5 +74,7 @@ try {
     console.log(`Browser smoke passed after hydration for ${routes.length} route variants.`);
   }
 } finally {
-  server.kill('SIGTERM');
+  server.kill('SIGKILL');
+  server.stdout?.destroy();
+  server.stderr?.destroy();
 }
