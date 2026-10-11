@@ -1,11 +1,12 @@
-# Reference Style Demo
+# Reference Style Demo — Updated Version
 
-نموذج تجريبي للريل الأول بأسلوب الفيديو المرجعي:
+تم تحديث النموذج التجريبي بناءً على المراجعة:
 
-- Editorial light background with grayscale structure and CartMakers green accent.
-- Animated visual objects: commerce phone, UI cards, checkout card, arrows, and geometric forms.
-- Large kinetic typography with five narrative beats.
-- Slide-left transitions, controlled zoom, progress-like visual movement, and sound effects on cuts.
-- Egyptian Arabic voice-over remains the narrative layer.
+- **الخطوط الرئيسية أكبر** لتُقرأ من أول ثانية على شاشة الهاتف.
+- **الانتقالات أسرع** مع Slide Transition قصير وحركة أكثر حدة بين المشاهد.
+- **Objects وUI أوضح وأكبر** داخل الكادر.
+- **الصوت مصري واحد** بأداء أكثر حماسًا وتنوعًا، مع الحفاظ على النبرة المهنية وعدم التحول إلى أسلوب إعلان صاخب.
+- **Sound Effects** متزامنة مع الانتقالات.
+- Editorial light background مع CartMakers green accent.
 
-This is a direction test before applying the same visual language to the remaining three Reels.
+هذا النموذج هو النسخة المعدلة للريل الأول قبل تطبيق الاتجاه على باقي الريلز.
