@@ -4,11 +4,9 @@ import shutil, textwrap
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'CartMakers-social-content-pack-final'
 if OUT.exists(): shutil.rmtree(OUT)
-(OUT/'01-pinned-carousels').mkdir(parents=True)
 (OUT/'02-posts-and-reels').mkdir(parents=True)
 (OUT/'03-final-reference-style-reels').mkdir(parents=True)
 
-shutil.copytree(ROOT/'social-carousels', OUT/'01-pinned-carousels', dirs_exist_ok=True)
 shutil.copytree(ROOT/'social-post-pack-after-pins', OUT/'02-posts-and-reels', dirs_exist_ok=True)
 shutil.copytree(ROOT/'reference-style-reels-final', OUT/'03-final-reference-style-reels', dirs_exist_ok=True)
 
@@ -48,9 +46,6 @@ captions={
 def md(item):
  return f'''# {item["title"]}\n\n- **النوع:** {item["type"]}\n\n## Hook\n\n> {item["hook"]}\n\n## Caption جاهز للنشر\n\n{item["caption"]}\n\n## CTA\n\n**{item["cta"]}**\n\n## نسخة قصيرة للحملات\n\n**Primary Text:** {item["ad"]}\n\n**Headline:** {item["headline"]}\n\n**CTA المقترح:** تواصل معنا / احجز جلسة تشخيص / تعرّف على المزيد\n\n## Hashtags\n\n{item["hashtags"]}\n\n## ملاحظة تنفيذية\n\nلا تستخدم ادعاءات أو أرقام نتائج غير موثقة. اختبر الـHook والنسخة الإعلانية على أكثر من صيغة، ثم اعتمد النسخة التي تحقق أفضل حفظ ومشاهدة كاملة ورسائل ذات جودة.\n'''
 
-# Add captions to pinned carousel folders.
-for key in ['01-about','02-problems','03-workflow']:
- (OUT/'01-pinned-carousels'/key/'caption.md').write_text(md(captions[key]),encoding='utf-8')
 # Rewrite captions in the full post pack with the campaign-ready versions.
 for key in [f'{i:02d}-{name}' for i,name in [(1,'reel-before-ads'),(2,'product-page-checklist'),(3,'clean-proof'),(4,'platform-choice'),(5,'social-to-repeat'),(6,'checkout-friction'),(7,'case-note'),(8,'store-or-site'),(9,'bts-brief'),(10,'followers-myth'),(11,'launch-checklist'),(12,'diagnostic-cta')]]:
  (OUT/'02-posts-and-reels'/key/'caption.md').write_text(md(captions[key]),encoding='utf-8')
@@ -65,6 +60,6 @@ for key, filename in {
 }.items():
  (final_captions/filename).write_text(md(captions[key]),encoding='utf-8')
 
-index='''# CartMakers — Full Social Content Pack\n\nحزمة تسليم كاملة للاستخدام في Instagram وFacebook والحملات الإعلانية.\n\n## المحتويات\n\n- `01-pinned-carousels/`: الكاروسيلات الثلاثة المثبتة، ملفات المصدر، صور الشرائح، وكابشن كل كاروسيل.\n- `02-posts-and-reels/`: الـ12 أصلًا بعد الـPinned Posts، بما يشمل الصور، الكاروسيلات، ملفات HTML المصدر، الفيديوهات، الصوت، وكابشن كل أصل.\n- `03-final-reference-style-reels/`: الريلز الأربعة النهائية بأسلوب الفيديو المرجعي مع كابشن كل Reel.\n\n## داخل كل Caption\n\n- Hook قوي.\n- Caption جاهز للنشر.\n- CTA واحد واضح.\n- نسخة قصيرة للحملات: Primary Text + Headline.\n- Hashtags مناسبة.\n- ملاحظة تمنع استخدام نتائج أو أرقام غير موثقة.\n\n## ملاحظة نشر\n\nلا تنشر كل الأصول دفعة واحدة. استخدم 3 منشورات أسبوعيًا، واختبر الـHooks والنسخ الإعلانية حسب الحفظ، المشاهدة الكاملة، المشاركات، والرسائل ذات الجودة.\n'''
+index='''# CartMakers — Full Social Content Pack\n\nحزمة تسليم كاملة للاستخدام في Instagram وFacebook والحملات الإعلانية.\n\n## المحتويات\n\n- `02-posts-and-reels/`: الـ12 أصلًا بعد الـPinned Posts، بما يشمل الصور، الكاروسيلات، ملفات HTML المصدر، الفيديوهات، الصوت، وكابشن كل أصل.\n- `03-final-reference-style-reels/`: الريلز الأربعة النهائية بأسلوب الفيديو المرجعي مع كابشن كل Reel.\n\nتم استبعاد الـPinned Carousels من هذه النسخة لأنها نُشرت بالفعل.\n\n## داخل كل Caption\n\n- Hook قوي.\n- Caption جاهز للنشر.\n- CTA واحد واضح.\n- نسخة قصيرة للحملات: Primary Text + Headline.\n- Hashtags مناسبة.\n- ملاحظة تمنع استخدام نتائج أو أرقام غير موثقة.\n\n## ملاحظة نشر\n\nلا تنشر كل الأصول دفعة واحدة. استخدم 3 منشورات أسبوعيًا، واختبر الـHooks والنسخ الإعلانية حسب الحفظ، المشاهدة الكاملة، المشاركات، والرسائل ذات الجودة.\n'''
 (OUT/'CONTENT_INDEX.md').write_text(index,encoding='utf-8')
 print(f'Built {OUT}')
