@@ -25,8 +25,8 @@ const SOCIAL_IMAGE = `${SITE_URL}/assets/cartmakers-social-cover.png`;
 const CONTACT = {
   email: 'contact@cart-makers.com',
   emailHref: 'mailto:contact@cart-makers.com',
-  whatsapp: '1558227828',
-  whatsappHref: 'https://wa.me/1558227828?text=مرحبًا%20CartMakers،%20أرغب%20في%20حجز%20جلسة%20تشخيص.',
+  whatsapp: '201558334626',
+  whatsappHref: 'https://wa.me/201558334626?text=مرحبًا%20CartMakers،%20أرغب%20في%20حجز%20جلسة%20تشخيص.',
   facebook: 'https://www.facebook.com/cart.makerss/?ref=PROFILE_EDIT_xav_ig_profile_page_web#',
   instagram: 'https://www.instagram.com/cart.makers/',
   tiktok: 'https://www.tiktok.com/@cart.makers'

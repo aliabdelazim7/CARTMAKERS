@@ -628,7 +628,7 @@ npm run test:browser
 - Facebook: https://www.facebook.com/cart.makerss/?ref=PROFILE_EDIT_xav_ig_profile_page_web#
 - Instagram: https://www.instagram.com/cart.makers/
 - TikTok: https://www.tiktok.com/@cart.makers
-- WhatsApp: `1558227828` عبر `https://wa.me/1558227828`
+- WhatsApp: `+20 15 58334626` عبر `https://wa.me/201558334626`
 - Email: `contact@cart-makers.com`
 
 تظهر الآن روابط البريد وWhatsApp وأيقونات Facebook وInstagram وTikTok داخل الـfooter، مع رسالة WhatsApp ابتدائية جاهزة. لم يتم تغيير Endpoint إرسال نموذج التواصل؛ يظل يعمل عبر إعدادات Telegram الموجودة في بيئة النشر.
