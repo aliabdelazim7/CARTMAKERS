@@ -731,3 +731,9 @@ npm run test:browser
 - `npm run test:seo` — نجح على 30 Route.
 - `npm run test:browser` — نجح على 17 Route variant.
 - اختبار DOM بعد hydration — زر واحد ورابط WhatsApp صحيح في `/` و`/portfolio` و`/projects/velora` و`/policies` و`/services/ecommerce` و`/insights`.
+
+## 27. Her Majesty World portfolio project — 2026-11-02
+
+تمت إضافة مشروع `Her Majesty World` إلى قائمة الأعمال في `src/main.jsx` مع صفحة التفاصيل `/projects/her-majesty-world`. المشروع موصوف كمتجر Shopify للأزياء والإكسسوارات، ويستخدم صورة الـHero الأصلية من الموقع بعد ضغطها إلى `public/portfolio/her-majesty-world.webp` بحجم يقارب 77KB.
+
+تم تحديث `scripts/prerender.mjs` لإضافة المشروع إلى HTML القابل للفهرسة وSitemap/Route generation. نجح `npm run build` و`npm run test:seo` على 30 Route، و`npm run test:browser` على 17 Route variant، مع اختبار مباشر إضافي لمساري `/portfolio` و`/projects/her-majesty-world` وظهور الصورة والبيانات في كليهما.

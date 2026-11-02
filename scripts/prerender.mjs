@@ -21,7 +21,8 @@ const projects = [
   ['opreva','OPREVA','متجر Skincare يربط عرض المنتجات بالمكونات والفئات والعروض.','/portfolio/opreva.webp'],
   ['ms-uniforms','MS Uniforms','تجربة Catalog لمنتجات طبية تعتمد على المقاسات والألوان والتصنيفات.','/portfolio/ms-uniforms.webp'],
   ['quran-academy','Quran Academy','Landing Page تعليمية تشرح البرامج وتضع التسجيل في مقدمة الرحلة.','/portfolio/quran-academy.webp'],
-  ['shopping-online-store','Shopping Online Store','متجر عربي لمعدات التخييم والمغامرات يعرض المنتجات ومحتوى يساعد على الاختيار.','/portfolio/shopping-online-store.webp']
+  ['shopping-online-store','Shopping Online Store','متجر عربي لمعدات التخييم والمغامرات يعرض المنتجات ومحتوى يساعد على الاختيار.','/portfolio/shopping-online-store.webp'],
+  ['her-majesty-world','Her Majesty World','متجر Shopify لمنتجات أزياء وإكسسوارات يومية، بتجربة بصرية مباشرة تقود من الكولكشن إلى الشراء.','/portfolio/her-majesty-world.webp']
 ];
 const services = [
   ['wordpress','تطوير WordPress','نبني مواقع WordPress مرنة للبراندات والشركات، مع بنية محتوى واضحة، Responsive، SEO أساسي، وتسليم يمكن تشغيله.'],
