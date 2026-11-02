@@ -1,0 +1,1 @@
+<?php get_header(); ?><main class="cm-content-wrap"><article class="cm-single"><div class="section-kicker">POLICIES</div><h1>سياسات التعامل مع CartMakers</h1><div class="cm-copy"><?php while(have_posts()):the_post();the_content();endwhile; ?></div></article></main><?php get_footer(); ?>

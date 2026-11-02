@@ -1,0 +1,1 @@
+<?php get_header(); ?><main class="cm-content-wrap"><div class="section-kicker">SEARCH</div><h1>نتائج البحث عن: <?php echo esc_html(get_search_query()); ?></h1><?php get_template_part('index'); ?></main><?php get_footer(); ?>

@@ -1,0 +1,12 @@
+/*
+Theme Name: CartMakers Commerce Systems
+Theme URI: https://www.cart-makers.com/
+Author: CartMakers
+Description: Arabic-first, editable custom WordPress theme for CartMakers commerce systems and growth studio.
+Version: 1.0.0
+Requires at least: 6.2
+Requires PHP: 7.4
+Text Domain: cartmakers-theme
+*/
+@import url('assets/css/cartmakers-original.css');
+.cm-wp-only{display:block}.cm-content-wrap{max-width:1240px;margin:0 auto;padding:72px 32px}.cm-project-grid,.cm-service-grid,.cm-post-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.cm-card{background:#fff;border:1px solid var(--line);padding:24px}.cm-card img{width:100%;height:260px;object-fit:cover;display:block;margin-bottom:18px}.cm-card h2,.cm-card h3{margin:0 0 10px}.cm-card p{color:var(--slate);line-height:1.8}.cm-meta{font:500 11px 'DM Mono';color:var(--slate);text-transform:uppercase}.cm-card a{text-decoration:none}.cm-single img{max-width:100%;height:auto}.cm-single{max-width:900px;margin-inline:auto}.cm-single h1{font-size:clamp(44px,6vw,84px)}.cm-single .cm-copy{font-size:19px;line-height:2;color:var(--muted)}.cm-form{background:#fff;border:1px solid var(--line);padding:28px;display:grid;gap:14px}.cm-form label{display:grid;gap:7px;font-weight:600}.cm-form input,.cm-form textarea{padding:13px;border:1px solid #d0d5dd;font:inherit}.cm-form .cm-trap{position:absolute;left:-9999px}.cm-notice{padding:16px;background:var(--lime);margin-bottom:20px}@media(max-width:800px){.cm-project-grid,.cm-service-grid,.cm-post-grid{grid-template-columns:1fr}.cm-content-wrap{padding:48px 20px}}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="CartMakers symbol">
+  <rect width="256" height="256" rx="56" fill="#101828"/>
+  <path d="M38 44h24l18 106h104l29-72H82" fill="none" stroke="#C7F36B" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="101" cy="190" r="15" fill="#C7F36B"/>
+  <circle cx="170" cy="190" r="15" fill="#C7F36B"/>
+  <path d="M139 43h54l-27 27 27 27h-54l27-27z" fill="#C7F36B"/>
+</svg>
