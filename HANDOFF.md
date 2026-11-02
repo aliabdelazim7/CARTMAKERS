@@ -741,3 +741,9 @@ npm run test:browser
 ## 28. Featured portfolio ordering — 2026-11-02
 
 تم تقديم `Her Majesty World` إلى أول قائمة المشاريع في `src/main.jsx` و`scripts/prerender.mjs`، لذلك يظهر تلقائيًا كأول مشروع في الـPortfolio Slider داخل مقدمة الصفحة الرئيسية، وكذلك أول مشروع في صفحة الأعمال وHTML المولّد مسبقًا.
+
+## 29. Her Majesty World minimal portfolio image — 2026-11-02
+
+تم استبدال صورة مشروع `Her Majesty World` بصورة Editorial جديدة مينيمال وفخمة، بتكوين أزياء وإكسسوارات على خلفية عاجية وألوان plum وgold هادئة. تم حفظها في `public/portfolio/her-majesty-world.webp` بأبعاد `1400x600` وحجم يقارب `45KB` للحفاظ على سرعة الموقع.
+
+نجح `npm run build` و`npm run test:seo` على 30 Route و`npm run test:browser` على 17 Route variant بعد الاستبدال.
