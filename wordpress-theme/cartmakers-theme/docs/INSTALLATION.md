@@ -5,14 +5,17 @@
 - `cartmakers-theme.zip`: the visual theme and editable templates.
 - `cartmakers-core.zip`: the companion plugin that owns portfolio, services, testimonials, settings, importer and contact handling.
 
+This is the compatibility build. It includes a WordPress theme screenshot, guarded settings fallbacks, PHP 7.4-compatible syntax, and a non-destructive activation path.
+
 The original React/Vite website remains in the repository as the source reference and is not deleted by this migration.
 
 ## Installation
 
-1. In WordPress, open **Plugins → Add New → Upload Plugin** and upload `cartmakers-core.zip`.
-2. Activate **CartMakers Core**.
-3. Open **Appearance → Themes → Add New → Upload Theme** and upload `cartmakers-theme.zip`.
-4. Activate **CartMakers Commerce Systems**.
+1. If the earlier package caused a Critical Error, temporarily activate a default WordPress theme from the recovery email or hosting file manager first.
+2. In WordPress, open **Plugins → Add New → Upload Plugin** and upload the new `cartmakers-core.zip`.
+3. Activate **CartMakers Core** first.
+4. Go to **Appearance → Themes → Add New → Upload Theme** and upload the new `cartmakers-theme.zip`.
+5. Activate **CartMakers Commerce Systems**.
 5. Go to **Settings → Permalinks** and press **Save Changes** once so the custom post type URLs are flushed.
 6. Go to **Tools → CartMakers Importer** and import the known CartMakers project/service entries. The importer does not overwrite existing entries.
 7. Add the project images through the WordPress Media Library and set them as Featured Images.
