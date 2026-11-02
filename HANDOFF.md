@@ -737,3 +737,7 @@ npm run test:browser
 تمت إضافة مشروع `Her Majesty World` إلى قائمة الأعمال في `src/main.jsx` مع صفحة التفاصيل `/projects/her-majesty-world`. المشروع موصوف كمتجر Shopify للأزياء والإكسسوارات، ويستخدم صورة الـHero الأصلية من الموقع بعد ضغطها إلى `public/portfolio/her-majesty-world.webp` بحجم يقارب 77KB.
 
 تم تحديث `scripts/prerender.mjs` لإضافة المشروع إلى HTML القابل للفهرسة وSitemap/Route generation. نجح `npm run build` و`npm run test:seo` على 30 Route، و`npm run test:browser` على 17 Route variant، مع اختبار مباشر إضافي لمساري `/portfolio` و`/projects/her-majesty-world` وظهور الصورة والبيانات في كليهما.
+
+## 28. Featured portfolio ordering — 2026-11-02
+
+تم تقديم `Her Majesty World` إلى أول قائمة المشاريع في `src/main.jsx` و`scripts/prerender.mjs`، لذلك يظهر تلقائيًا كأول مشروع في الـPortfolio Slider داخل مقدمة الصفحة الرئيسية، وكذلك أول مشروع في صفحة الأعمال وHTML المولّد مسبقًا.

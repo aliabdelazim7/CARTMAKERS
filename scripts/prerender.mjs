@@ -7,6 +7,7 @@ const origin = 'https://www.cart-makers.com';
 const socialImage = `${origin}/assets/cartmakers-social-cover.png`;
 
 const projects = [
+  ['her-majesty-world','Her Majesty World','متجر Shopify لمنتجات أزياء وإكسسوارات يومية، بتجربة بصرية مباشرة تقود من الكولكشن إلى الشراء.','/portfolio/her-majesty-world.webp'],
   ['velora','Velora Flowers','متجر زهور ومناسبات يضع المناسبة والتوصيل وتجربة الهدية في مقدمة الرحلة.','/portfolio/velora.webp'],
   ['vervac','Vervac Animal Care','تجربة متجر واسعة تجمع المنتجات وقصة العلامة وتصنيفات العناية بالحيوانات.','/portfolio/vervac.webp'],
   ['black-horses','Black Horses','تجربة Corporate تقود الزائر من الوعد الهندسي إلى الخدمات والمشاريع.','/portfolio/black-horses.webp'],
@@ -22,7 +23,6 @@ const projects = [
   ['ms-uniforms','MS Uniforms','تجربة Catalog لمنتجات طبية تعتمد على المقاسات والألوان والتصنيفات.','/portfolio/ms-uniforms.webp'],
   ['quran-academy','Quran Academy','Landing Page تعليمية تشرح البرامج وتضع التسجيل في مقدمة الرحلة.','/portfolio/quran-academy.webp'],
   ['shopping-online-store','Shopping Online Store','متجر عربي لمعدات التخييم والمغامرات يعرض المنتجات ومحتوى يساعد على الاختيار.','/portfolio/shopping-online-store.webp'],
-  ['her-majesty-world','Her Majesty World','متجر Shopify لمنتجات أزياء وإكسسوارات يومية، بتجربة بصرية مباشرة تقود من الكولكشن إلى الشراء.','/portfolio/her-majesty-world.webp']
 ];
 const services = [
   ['wordpress','تطوير WordPress','نبني مواقع WordPress مرنة للبراندات والشركات، مع بنية محتوى واضحة، Responsive، SEO أساسي، وتسليم يمكن تشغيله.'],
