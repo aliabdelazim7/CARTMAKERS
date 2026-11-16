@@ -70,6 +70,26 @@
       "permanent": true
     },
     {
+      "source": "/services/shopify",
+      "destination": "/services/wordpress",
+      "permanent": true
+    },
+    {
+      "source": "/services/shopify/",
+      "destination": "/services/wordpress",
+      "permanent": true
+    },
+    {
+      "source": "/insights/woocommerce-or-shopify",
+      "destination": "/services/wordpress",
+      "permanent": true
+    },
+    {
+      "source": "/insights/woocommerce-or-shopify/",
+      "destination": "/services/wordpress",
+      "permanent": true
+    },
+    {
       "source": "/projects/:slug/",
       "destination": "/projects/:slug",
       "permanent": true
