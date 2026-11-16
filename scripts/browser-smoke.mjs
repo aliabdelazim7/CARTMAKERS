@@ -4,7 +4,7 @@ import { setTimeout as delay } from 'node:timers/promises';
 const baseUrl = 'http://127.0.0.1:4175';
 const chromium = process.env.CHROMIUM_PATH || '/usr/bin/chromium';
 const routes = [
-  { path: '/', title: 'تصميم وتطوير المواقع والمتاجر الإلكترونية', canonical: '/' },
+  { path: '/', title: 'تصميم وتطوير مواقع WordPress', canonical: '/' },
   { path: '/portfolio', title: 'أعمال المواقع والمتاجر الإلكترونية', canonical: '/portfolio' },
   { path: '/portfolio/', title: 'أعمال المواقع والمتاجر الإلكترونية', canonical: '/portfolio' },
   { path: '/about', title: 'عن CartMakers', canonical: '/about' },
@@ -12,14 +12,12 @@ const routes = [
   { path: '/projects/velora/', title: 'Velora Flowers', canonical: '/projects/velora' },
   { path: '/services/ecommerce', title: 'تطوير متجر إلكتروني', canonical: '/services/ecommerce' },
   { path: '/services/wordpress', title: 'WORDPRESS DEVELOPMENT', canonical: '/services/wordpress' },
-  { path: '/services/shopify', title: 'SHOPIFY', canonical: '/services/shopify' },
   { path: '/services/checkout', title: 'CHECKOUT', canonical: '/services/checkout' },
   { path: '/services/tracking', title: 'TRACKING', canonical: '/services/tracking' },
   { path: '/services/website', title: 'BUSINESS WEBSITE', canonical: '/services/website' },
   { path: '/insights', title: 'CartMakers Insights', canonical: '/insights' },
   { path: '/insights/checkout-audit', title: 'كيف تعرف', canonical: '/insights/checkout-audit' },
   { path: '/insights/launch-checklist', title: '7 نقاط', canonical: '/insights/launch-checklist' },
-  { path: '/insights/woocommerce-or-shopify', title: 'WooCommerce أم Shopify', canonical: '/insights/woocommerce-or-shopify' },
   { path: '/insights/why-visits-dont-convert', title: 'لماذا لا تتحول', canonical: '/insights/why-visits-dont-convert' },
 ];
 

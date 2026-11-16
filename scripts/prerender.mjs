@@ -7,7 +7,7 @@ const origin = 'https://www.cart-makers.com';
 const socialImage = `${origin}/assets/cartmakers-social-cover.png`;
 
 const projects = [
-  ['her-majesty-world','Her Majesty World','متجر Shopify لمنتجات أزياء وإكسسوارات يومية، بتجربة بصرية مباشرة تقود من الكولكشن إلى الشراء.','/portfolio/her-majesty-world.webp'],
+  ['her-majesty-world','Her Majesty World','متجر أزياء وإكسسوارات يومية، بتجربة بصرية مباشرة تقود من الكولكشن إلى الشراء.','/portfolio/her-majesty-world.webp'],
   ['velora','Velora Flowers','متجر زهور ومناسبات يضع المناسبة والتوصيل وتجربة الهدية في مقدمة الرحلة.','/portfolio/velora.webp'],
   ['vervac','Vervac Animal Care','تجربة متجر واسعة تجمع المنتجات وقصة العلامة وتصنيفات العناية بالحيوانات.','/portfolio/vervac.webp'],
   ['black-horses','Black Horses','تجربة Corporate تقود الزائر من الوعد الهندسي إلى الخدمات والمشاريع.','/portfolio/black-horses.webp'],
@@ -26,7 +26,6 @@ const projects = [
 ];
 const services = [
   ['wordpress','تطوير WordPress','نبني مواقع WordPress مرنة للبراندات والشركات، مع بنية محتوى واضحة، Responsive، SEO أساسي، وتسليم يمكن تشغيله.'],
-  ['shopify','تطوير Shopify والمنصات التجارية','نساعد العلامات النامية على إطلاق متجر Shopify أو منصة تجارة مناسبة، من الـTheme والكتالوج حتى Checkout والتشغيل.'],
   ['checkout','تحسين Checkout وCRO','نراجع تجربة Checkout ونقاط التسريب في المتجر الإلكتروني، من صفحة المنتج حتى الدفع والتأكيد والتوصيل.'],
   ['tracking','Tracking وAnalytics','نثبت أساسًا عمليًا للـTracking وAnalytics حتى تعرف العلامات أين يأتي الطلب وأين تتوقف الرحلة.'],
   ['website','تصميم موقع تعريفي','نبني مواقع تعريفية للشركات والبراندات تشرح العرض، تثبت الثقة، وتحوّل الزيارة إلى خطوة تواصل واضحة.']
@@ -34,7 +33,6 @@ const services = [
 const articles = [
   ['checkout-audit','كيف تعرف أن متجرَك يحتاج إلى مراجعة Checkout؟','علامات عملية تساعدك على اكتشاف احتكاك Checkout قبل زيادة ميزانية الإعلانات أو الزيارات.'],
   ['launch-checklist','7 نقاط قبل إطلاق متجر إلكتروني','Checklist عملية قبل إطلاق متجر إلكتروني: المحتوى، المنتجات، الدفع، الشحن، الموبايل، القياس، والتسليم.'],
-  ['woocommerce-or-shopify','WooCommerce أم Shopify: كيف تختار؟','طريقة عملية لمقارنة WooCommerce وShopify حسب التشغيل والدفع والشحن والمحتوى، وليس حسب الشهرة فقط.'],
   ['why-visits-dont-convert','لماذا لا تتحول زيارات المتجر إلى طلبات؟','أسباب عملية لانخفاض تحويلات المتجر الإلكتروني، من الرسالة والكتالوج إلى Checkout والقياس.']
 ];
 function esc(value){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
